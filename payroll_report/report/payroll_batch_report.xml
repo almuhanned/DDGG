@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+<!--    <report-->
+<!--            id="action_report_payroll_batch"-->
+<!--            model="hr.payslip"-->
+<!--            string="Payroll Reports"-->
+<!--            report_type="xlsx"-->
+<!--            name="payroll_report.payroll_report_xlsx"-->
+<!--            file="payroll_report"-->
+<!--            menu ="False"-->
+<!--            attachment_use="False"-->
+<!--    />-->
+
+    <record id="action_report_payroll_batch" model="ir.actions.report">
+        <field name="name">Payroll Reports</field>
+        <field name="model">hr.payslip</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">payroll_report.payroll_report_xlsx</field>
+        <field name="report_file">payroll_report.payroll_report_xlsx</field>
+        <field name="print_report_name">Payroll Reports</field>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

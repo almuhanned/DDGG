@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Payslip Batch View -->
+        <record id="payroll_extension_inherit_view_hr_payslip_run_form" model="ir.ui.view">
+            <field name="name">payroll.extension.inherit.hr.payslip.run.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_validate']" position="replace">
+                    <button string="Confirm" name="action_confirm" type="object" states="verify" class="oe_highlight"
+                            groups="hr.group_hr_user"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_draft']" position="replace">
+                    <button string="Set to Draft" name="action_draft" type="object" states="cancel"/>
+                </xpath>
+                <xpath expr="//button[@name='action_paid']" position="replace">
+                    <button string="Register Payment" name="action_register_payment" type="object" states="close"
+                            class="oe_highlight"
+                            groups="account.group_account_invoice"/>
+                </xpath>
+                <xpath expr="//sheet/div[hasclass('oe_button_box')]" position="inside">
+                    <button name="action_view_entries" class="oe_stat_button"
+                            icon="fa-bars" type="object" string="Payslip Payment"
+                            attrs="{'invisible': [('payment_move_ids', '=', [])]}"/>
+                    <field name="payment_move_ids" widget="many2many_tags"
+                           invisible="1"/>
+                </xpath>
+
+                <xpath expr="//header" position="inside">
+                    <button string="Approve" name="action_approve" type="object" states="confirm" class="oe_highlight"
+                            groups="hr.group_hr_manager"/>
+                    <button string="Post" name="action_post" type="object" states="approve" class="oe_highlight"
+                            groups="account.group_account_invoice"/>
+                    <button string="Cancel" name="action_cancel" type="object"
+                            states="draft,verify,confirm,approve" groups="hr.group_hr_manager"/>
+                    <button string="Refuse" name="action_refuse" type="object" states="draft,verify,confirm,approve"
+                            groups="hr.group_hr_manager"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

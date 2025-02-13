@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+
+        <record id="group_picking_first_validation" model="res.groups">
+            <field name="name">Picking First Validation</field>
+            <field name="implied_ids" eval="[(4, ref('stock.group_stock_user'))]"/>
+        </record>
+        <record id="group_picking_second_validation" model="res.groups">
+            <field name="name">Picking Second Validation</field>
+            <field name="implied_ids" eval="[(4, ref('stock.group_stock_user'))]"/>
+        </record>
+        
+        
+        
+
+    </data>
+</odoo>

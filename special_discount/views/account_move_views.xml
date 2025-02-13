@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+        <record id="special_discount_invoice_view_form" model="ir.ui.view">
+            <field name="name">special.discount.account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="universal_discount.ks_global_discount_invoice_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[1]/div[2]" position="after">
+                    <br/>
+                    <div attrs="{'invisible':[('move_type', 'not in', ('out_invoice','out_refund'))]}">
+                        <label for="special_discount_type" string="Special Discount Type:"/>
+                        <field name="special_discount_type" class="oe_inline"/>
+                    </div>
+
+                    <div attrs="{'invisible':[('move_type', 'not in', ('out_invoice','out_refund'))]}">
+                        <label for="special_discount_rate" string="Special Discount :"/>
+                        <field name="special_discount_rate" class="oe_inline"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='ks_amount_discount']" position="after">
+                    <field name="special_discount"  attrs="{'invisible':[('move_type', 'not in', ('out_invoice','out_refund'))]}"/>
+                    <field name="amount_untaxed" />
+                    <field name="amount_total_signed" />
+                    <field name="amount_total_in_currency_signed" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

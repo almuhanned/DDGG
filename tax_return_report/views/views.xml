@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+    <record id="view_move_line_form_inherit_tax" model="ir.ui.view">
+        	<field name="name">view.move.line.form.inherit.tax</field>
+        	<field name="model">account.move</field>
+        	<field name="inherit_id" ref="account.view_move_form"/>
+			<field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='name']" position="after">-->
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                    <field name="invoice_no"/>
+                </xpath>
+			</field>
+        </record>
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="tax_return_report.list">
+      <field name="name">tax_return_report list</field>
+      <field name="model">tax_return_report.tax_return_report</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="tax_return_report.action_window">
+      <field name="name">tax_return_report window</field>
+      <field name="res_model">tax_return_report.tax_return_report</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tax_return_report.action_server">
+      <field name="name">tax_return_report server</field>
+      <field name="model_id" ref="model_tax_return_report_tax_return_report"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="tax_return_report" id="tax_return_report.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="tax_return_report.menu_1" parent="tax_return_report.menu_root"/>
+    <menuitem name="Menu 2" id="tax_return_report.menu_2" parent="tax_return_report.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="tax_return_report.menu_1_list" parent="tax_return_report.menu_1"
+              action="tax_return_report.action_window"/>
+    <menuitem name="Server to list" id="tax_return_report" parent="tax_return_report.menu_2"
+              action="tax_return_report.action_server"/>
+-->
+  </data>
+</odoo>

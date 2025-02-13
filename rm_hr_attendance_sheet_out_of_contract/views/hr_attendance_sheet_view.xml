@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="out_contract_inherit_attendance_sheet_from" model="ir.ui.view">
+            <field name="name">out.contract.inherit.attendance.sheet.from</field>
+            <field name="model">attendance.sheet</field>
+            <field name="inherit_id" ref="rm_hr_attendance_sheet.attendance_sheet_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page[2]/group" position="inside">
+                    <group string="Out of Contract">
+                        <field name="number_out_contract" string="Out of Contract"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

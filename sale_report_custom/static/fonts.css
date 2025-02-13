@@ -1,0 +1,17 @@
+
+
+@font-face {
+            font-family: 'arabtype';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/sale_report_custom/static/fonts/arabtype.ttf) format('truetype');
+        }
+        
+@font-face {
+            font-family: 'Calibri Bold Italic';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/sale_report_custom/static/fonts/Calibri Bold Italic.ttf) format('truetype');
+        }
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="tax_return_report_report_wizard_form_view" model="ir.ui.view">
+            <field name="name">tax.return.report.wizard.form.view</field>
+            <field name="model">tax.return.report</field>
+            <field name="arch" type="xml">
+                <form string="Tax Return Report">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="start_date"/>
+                            </group>
+                            <group>
+                                <field name="end_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="report_type"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="get_report"
+                                    string="Print" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tax_return_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Tax Return Report</field>
+            <field name="res_model">tax.return.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_wiz_excel_reports">
+            <field name="name">wiz.excel.reports.form</field>
+            <field name="model">wiz.excel.reports</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <sheet>
+                        <field name="name" invisible="1"/>
+                        <field name="file_download" filename="name"/>
+                    </sheet>
+                    <footer>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+               
+            </field>
+        </record>
+        
+        <menuitem name="Tax Return Report" id="tax_return_report_wizard_root"  parent="account.menu_finance_reports"/>
+
+        <menuitem name="Tax Return Report" action="tax_return_report_wizard_action"
+                  id="tax_return_report_wizard_id"  parent="tax_return_report_wizard_root"/>
+    </data>
+</odoo>

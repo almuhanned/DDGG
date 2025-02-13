@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="print_journal_entery.list">
+      <field name="name">print_journal_entery list</field>
+      <field name="model">print_journal_entery.print_journal_entery</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="print_journal_entery.action_window">
+      <field name="name">print_journal_entery window</field>
+      <field name="res_model">print_journal_entery.print_journal_entery</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="print_journal_entery.action_server">
+      <field name="name">print_journal_entery server</field>
+      <field name="model_id" ref="model_print_journal_entery_print_journal_entery"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="print_journal_entery" id="print_journal_entery.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="print_journal_entery.menu_1" parent="print_journal_entery.menu_root"/>
+    <menuitem name="Menu 2" id="print_journal_entery.menu_2" parent="print_journal_entery.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="print_journal_entery.menu_1_list" parent="print_journal_entery.menu_1"
+              action="print_journal_entery.action_window"/>
+    <menuitem name="Server to list" id="print_journal_entery" parent="print_journal_entery.menu_2"
+              action="print_journal_entery.action_server"/>
+-->
+  </data>
+</odoo>

@@ -1,0 +1,172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_google_maps_drawing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-24 10:59+0000\n"
+"PO-Revision-Date: 2020-06-04 11:42+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__shape_area
+msgid "Area"
+msgstr "منطقة"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__center_latitude
+msgid "Center Latitude"
+msgstr "مركز خط العرض"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__center_longitude
+msgid "Center Longitude"
+msgstr "مركز خط الطول"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields.selection,name:web_google_maps_drawing.selection__google_maps_drawing_shape_mixin__shape_type__circle
+msgid "Circle"
+msgstr "دائرة"
+
+#. module: web_google_maps_drawing
+#: model:ir.model,name:web_google_maps_drawing.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الإعدادات"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__shape_description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__display_name
+msgid "Display Name"
+msgstr "الاسم الظاهر"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_res_config_settings__google_maps_drawing
+msgid "Drawing"
+msgstr "رسم"
+
+#. module: web_google_maps_drawing
+#: model_terms:ir.ui.view,arch_db:web_google_maps_drawing.res_config_settings_view_form
+msgid "Drawing library documentation"
+msgstr "رسم توثيق مكتبي"
+
+#. module: web_google_maps_drawing
+#: model_terms:ir.ui.view,arch_db:web_google_maps_drawing.res_config_settings_view_form
+msgid ""
+"Drawing provides a graphical interface for users to draw polygons, rectangles, polylines, circles, and markers on the map. \n"
+"                            Consult the"
+msgstr ""
+"يوفر الرسم واجهة رسومية للمستخدمين لرسم المضلعات والمستطيلات والخطوط المتعددة والدوائر والعلامات على الخريطة. \n"
+"                            استشر"
+
+#. module: web_google_maps_drawing
+#: model:ir.model,name:web_google_maps_drawing.model_google_maps_drawing_shape_mixin
+msgid "Google Maps Shape Mixin"
+msgstr "صور خرائط جوجل الشكل"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__shape_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__NE_latitude
+msgid "NorthEast Latitude"
+msgstr "شمال شرق خط العرض"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__NE_longitude
+msgid "NorthEast Longitude"
+msgstr "خط الطول شمال شرق"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__shape_paths
+msgid "Paths"
+msgstr "مسارات"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields.selection,name:web_google_maps_drawing.selection__google_maps_drawing_shape_mixin__shape_type__polygon
+msgid "Polygon"
+msgstr "المضلع"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__poly_lat
+msgid "Polygon Latitude"
+msgstr "مضلع خط العرض"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__poly_lng
+msgid "Polygon Longitude"
+msgstr "مضلع خط الطول"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__shape_radius
+msgid "Radius"
+msgstr "نصف القطر"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields.selection,name:web_google_maps_drawing.selection__google_maps_drawing_shape_mixin__shape_type__rectangle
+msgid "Rectangle"
+msgstr "مستطيل"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__SW_latitude
+msgid "SouthWest Latitude"
+msgstr "جنوب غرب خط العرض"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__SW_longitude
+msgid "SouthWest Longitude"
+msgstr "خط الطول جنوب غرب"
+
+#. module: web_google_maps_drawing
+#: model:ir.model.fields,field_description:web_google_maps_drawing.field_google_maps_drawing_shape_mixin__shape_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: web_google_maps_drawing
+#: model_terms:ir.ui.view,arch_db:web_google_maps_drawing.res_config_settings_view_form
+msgid "for more information."
+msgstr "للمزيد من المعلومات."

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+    <!-- See LICENSE file for full copyright and licensing details. -->
+    <data>
+
+        <template id="payment_tamara_product_widget" inherit_id="website_sale.product_price">
+            <xpath expr="//div//h3[hasclass('css_editable_mode_hidden')]" position="after">
+                <t t-set="widget_key" t-value="request.env['payment.acquirer'].sudo().get_public_key()"/>
+                <t t-if="widget_key">
+                    <div class="tamara-product-widget">
+                        <tamara-widget class="tamara-summary" type="tamara-summary" inline-type="5"  t-att-amount="combination_info['price']"></tamara-widget>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="payment_tamara_payment_checkout_widget" inherit_id="payment.checkout">
+            <xpath expr="//form[@name='o_payment_checkout']//div[hasclass('card')]/t[@t-foreach='acquirers']/div[@name='o_payment_option_card']" position="inside">
+                <t t-if="acquirer.provider == 'tamara'">
+                    <t t-set="widget_key" t-value="request.env['payment.acquirer'].sudo().get_public_key()"/>
+                    <t t-if="widget_key">
+                        <div class="tamara-product-widget" style="margin-top:10px;">
+                            <tamara-widget class="tamara-summary" type="tamara-summary" inline-type="5"  t-att-amount="amount"></tamara-widget>
+                        </div>
+                    </t>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="payment_tamara_web_layout" inherit_id="web.layout">
+            <xpath expr="//head" position="inside">
+                <t t-set="widget_details" t-value="request.env['payment.acquirer'].sudo().tamara_widget_details()" />
+                <t t-set="widget_lang" t-value="widget_details['widget_lang']" />
+                <t t-set="widget_country" t-value="widget_details['widget_country']" />
+                <t t-set="widget_key" t-value="widget_details['widget_public_key']" />
+                <script defer="defer" type="text/javascript" t-att-src="widget_details['tamara_widget_js']"></script>
+                <script>
+                    window.tamaraWidgetConfig = {
+                        lang: "<t t-esc="widget_lang"/>",
+                        country: "<t t-esc="widget_country"/>",
+                        publicKey: "<t t-esc="widget_key"/>",
+                        style: {
+                        fontSize: "15px",
+                        badgeRatio: "1.0"
+                        },
+                        
+                    };
+                </script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

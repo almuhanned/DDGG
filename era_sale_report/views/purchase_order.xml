@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='print_quotation'][1]" position="after">
+                    <button name="send_request" string="Send Request" type="object" states="draft" class="oe_highlight" groups="base.group_user" data-hotkey="s"/>
+                    <button name="purchasing_approve" string="Purchasing" type="object" states="purchasing" class="oe_highlight" groups="era_sale_report.purchasing_approval_manager" data-hotkey="p"/>
+                    <button name="accounting_approve" string="Accounting" type="object" states="accounting" class="oe_highlight" groups="era_sale_report.accounting_approval_manager" data-hotkey="a"/>
+                    <button name="general_manager_approve" string="General Manager" type="object" states="general_manager" class="oe_highlight" groups="era_sale_report.general_approval_manager" data-hotkey="g"/>
+                </xpath>
+
+                <xpath expr="//button[@name='button_confirm'][1]" position="attributes">
+                    <attribute name="states">ceo</attribute>
+                    <attribute name="string">CEO Approve</attribute>
+                    <attribute name="groups">era_sale_report.ceo_approval_manager</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='button_confirm'][2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='print_quotation'][2]" position="attributes">
+                    <attribute name="states">sent,purchasing,accounting,general_manager,ceo</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='button_cancel']" position="attributes">
+                    <attribute name="states">purchasing,accounting,general_manager,ceo,draft,to approve,sent,purchase</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible">draft,sent,purchasing,accounting,,general_manager,ceo,purchase</attribute>
+                </xpath>
+
+                <xpath expr="//page[@name='purchase_delivery_invoice']" position="before">
+                    <page string="Approvals">
+                        <field name="approval_tracking_ids" readonly="1" force_save="1">
+                            <tree>
+                                <field name="name"/>
+                                <field name="user_id"/>
+                                <field name="date"/>
+                                <field name="purchase_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="contact_person" attrs="{'readonly': [('state', 'not in', ('draft', 'sent', 'to approve'))]}"/>
+                    <field name="contact_phone" attrs="{'readonly': [('state', 'not in', ('draft', 'sent', 'to approve'))]}"/>
+                    <field name="contact_email" attrs="{'readonly': [('state', 'not in', ('draft', 'sent', 'to approve'))]}"/>
+                </xpath>
+
+                <xpath expr="//div[@name='reminder']" position="after">
+                    <field name="payment_method_id" attrs="{'readonly': [('state', 'not in', ('draft', 'sent', 'to approve'))]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

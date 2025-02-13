@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_attendance_area,access.hr.attendance.area,model_hr_attendance_area,hr_attendance.group_hr_attendance_user,1,1,1,1
+access_hr_attendance_area_user,access.hr.attendance.area,model_hr_attendance_area,base.group_user,1,1,1,1
+access_ir_mail_server,access.hr.attendance.area,base.model_ir_mail_server,base.group_user,1,1,1,1
+access_attendance_count_wizard,accessattendance.count.wizard,model_attendance_count_wizard,,1,1,1,1

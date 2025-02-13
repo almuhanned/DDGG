@@ -1,0 +1,22 @@
+<odoo>
+	<data>
+
+		<record id="view_category_zid_form" model="ir.ui.view">
+			<field name="name">product.category.zid.form.inherit</field>
+			<field name="model">product.category</field>
+			<field name="inherit_id" ref="product.product_category_form_view" />
+			<field name="arch" type="xml">
+				<group name="first" position="after">
+					<group name="zid_config">
+						<group string="Zid Integration"
+							groups="zid_connector.group_zid_integration_user">
+							<field name="sync_zid" />
+							<field name="zid_store_id" readonly="1"/>
+						</group>
+					</group>
+				</group>
+			</field>
+		</record>
+
+	</data>
+</odoo>

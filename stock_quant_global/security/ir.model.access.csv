@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sale_salesman_access_product_quantity,sale_salesman_product_quantity,model_product_quantity_report,sales_team.group_sale_salesman,1,1,1,1
+purchase_user_access_product_quantity,purchase_user_product_quantity,model_product_quantity_report,purchase.group_purchase_user,1,1,1,1
+stock_user_access_product_quantity,stock_user_product_quantity,model_product_quantity_report,stock.group_stock_user,1,1,1,1

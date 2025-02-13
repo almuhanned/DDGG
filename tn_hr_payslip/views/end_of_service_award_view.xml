@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherit_view_end_of_service_award_form" model="ir.ui.view">
+        <field name="name">view.end.of.service.award.form.inherit</field>
+        <field name="model">end.of.service.award</field>
+        <field name="inherit_id" ref="hr_annual_leave_allocation.view_end_of_service_award_form"/>
+        <field name="arch" type="xml">
+             <!-- <field name="holiday_days" position="replace">
+                 <field name="holiday_days" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+             </field> -->
+            <xpath expr="//header" position="inside">
+            <field name="account_move_state" invisible="0"/>
+                <button string="Reset to Draft" name="action_draft" type="object" class="oe_highlight" groups="tn_hr_payslip.group_reset_eos_to_draft"
+                        attrs="{'invisible': ['|', ('state', '!=', 'approved'), ('account_move_state', 'in', ['posted', ''])]}"/>
+            </xpath>
+            <xpath expr="//group[@name='leaves']" position="replace">
+                <group string="Leaves">
+                    <group>
+
+                        <label for="duration_days"/>
+                        <div class="o_row">
+                            <field name="duration_days" />
+                            <span>Days</span>
+                        </div>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="total" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="holiday_days" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    </group>
+                </group>
+
+            </xpath>
+
+            <xpath expr="//group[@name='left_payroll']" position="replace">
+                <group name="left_payroll">
+                            <field name="contract_id"/>
+                            <field name="rejoin_date" />
+                            <field name="number_of_days_from_rejoin_date_text" />
+                </group>
+            </xpath>
+
+            <xpath expr="//group[@name='right_payroll']" position="inside">
+                <field name="number_of_days_from_join_date_text"/>
+                <!-- <label for="number_of_days_from_rejoin_date"/>
+                        <div class="o_row">
+                            <field name="number_of_days_from_rejoin_date" />
+                            <span>Days</span>
+                        </div> -->
+            </xpath>
+            <!-- <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"  readonly="1" force_save="1"/> -->                
+            <!-- </xpath> -->
+            <field name="remaining_amount" position="after">
+                <field name="loan_amount" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1"/>
+                <field name="other_amount"  widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="other_ded_amount"  widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="eos_note"/>
+            </field>
+            <!-- <field name="amount_received" position="replace">
+                 <field name="amount_received" readonly="1" force_save="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </field> -->
+            <field name="remaining_amount" position="replace">
+                <field name="remaining_amount"   widget="monetary" options="{'currency_field': 'currency_id'}" force_save="1"/>
+            </field>
+
+        
+            <xpath expr="//form/sheet" position="inside">
+                <notebook>
+                    <page name="name" string="Journal Entery">
+                        <group>
+                            <group>
+                               <field name="journal_id"/>
+                                <field name="account_holiday_id"/> 
+                                <field name="loan_account_id" readonly="1"/>                                
+                                <field name="account_other_allownces_id" readonly="1"/>
+                                <field name="account_other_deduction_id" readonly="1"/>
+                                
+                            </group>
+                            <group>
+                                <field name="account_end_service_id"/>
+                                <field name="account_id"/>
+                                <field name="account_move_id"/>
+                            </group>   
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
+ 

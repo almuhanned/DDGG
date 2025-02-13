@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="type_double_validate" invisible="1"/>
+            </field>
+            <xpath expr="//button[@name='button_validate'][hasclass('oe_highlight')]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|',('state', 'in', ('waiting','confirmed')), ('show_validate', '=', False), ('type_double_validate', '=', True)]}</attribute>
+            </xpath> 
+            <xpath expr="//button[@name='button_validate'][hasclass('o_btn_validate')]" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|',('state', 'not in', ('waiting', 'confirmed')), ('show_validate', '=', False), ('type_double_validate', '=', True)]}</attribute>
+            </xpath> 
+            <button name="action_confirm" position="after">
+                <button name="action_first_validate" attrs="{'invisible': ['|',('state', 'not in', ('assigned')), ('type_double_validate', '!=', True)]}" string="Validate" type="object" class="oe_highlight" groups="stock_double_validation.group_picking_first_validation" data-hotkey="v"/>
+                <button name="button_validate" attrs="{'invisible': ['|', ('state', 'not in', ('validate1')), ('show_validate', '=', False)]}" string="Validate" type="object" class="oe_highlight" groups="stock_double_validation.group_picking_second_validation" data-hotkey="v"/>
+            </button>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_picking_type_form_inherit">
+        <field name="name">Operation Types</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <field name="show_reserved" position="after">
+                <field name="double_validate"/>
+            </field>
+        </field>
+    </record>
+ 
+</odoo>

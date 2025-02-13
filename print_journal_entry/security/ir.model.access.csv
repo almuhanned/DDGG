@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_print_journal_entery_print_journal_entery,print_journal_entery.print_journal_entery,model_print_journal_entery_print_journal_entery,base.group_user,1,1,1,1

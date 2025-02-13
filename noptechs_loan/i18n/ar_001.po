@@ -1,0 +1,770 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* noptechs_loan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-03 11:47+0000\n"
+"PO-Revision-Date: 2021-05-03 11:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__active
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_search
+msgid "Active"
+msgstr "نشِط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_ids
+msgid "Activities"
+msgstr "الأنشِطة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__interference
+msgid "Allow Interference"
+msgstr "السماح بالتدخل"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__amount
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan_line__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__validation
+msgid "Apply Double Validation "
+msgstr "تطبيق التحقق المزدوج "
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Approve"
+msgstr "وافِق"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan__state__approve
+msgid "Approved"
+msgstr "موافق عليه"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__balance_amount
+msgid "Balance Amount"
+msgstr "المبلغ"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__balance_amount
+msgid "Balance amount"
+msgstr "المبلغ"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan_type__loan_type__salary
+msgid "Based on Salary"
+msgstr "على أساس الراتب"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan__state__cancel
+msgid "Canceled"
+msgstr "ملغي"
+
+#. module: noptechs_loan
+#: model_terms:ir.actions.act_window,help:noptechs_loan.action_hr_loan_request
+msgid "Click to create a new Loan request."
+msgstr "أنقر لإنشاء طلب قرض جديد."
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__company_id
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Compute Installment"
+msgstr "حساب القسط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__create_uid
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__create_uid
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__create_uid
+msgid "Created by"
+msgstr "أنشأ بواسطة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__create_date
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__create_date
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__create_date
+msgid "Created on"
+msgstr "أنشأ في"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__currency_id
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__date
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__payment_date
+msgid "Date of the paymemt"
+msgstr "تاريخ الدفع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan_line__date
+msgid "Date of the payment"
+msgstr "تاريخ الدفع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__department_id
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_request_search_form
+msgid "Department"
+msgstr "القسم"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__note
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_type_form_view
+msgid "Description"
+msgstr "الوصف"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__display_name
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__display_name
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__display_name
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip_input__display_name
+msgid "Display Name"
+msgstr "إسم العرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan__state__draft
+msgid "Draft"
+msgstr "مُسودة"
+
+#. module: noptechs_loan
+#: model:ir.model,name:noptechs_loan.model_hr_employee
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__employee_id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__employee_id
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__department_id
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__employee_id
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan_line__employee_id
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_request_search_form
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__end_date
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__factor
+msgid "Factor"
+msgstr "العامل"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan_type__loan_type__fixed
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (قنوات)"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (شركاء)"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_employee__id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip__id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip_input__id
+msgid "ID"
+msgstr "المُعرِف"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء."
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_needaction
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_has_error
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_search
+msgid "Inactive"
+msgstr "غير نشِط"
+
+#. module: noptechs_loan
+#: model:ir.model,name:noptechs_loan.model_hr_loan_line
+msgid "Installment Line"
+msgstr "بند القسط"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Installments"
+msgstr "الأقساط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__job_position
+msgid "Job Position"
+msgstr "المرتبة الوظيفية"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__job_position
+msgid "Job position"
+msgstr "المرتبة الوظيفية"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__loan_journal_id
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan____last_update
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line____last_update
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type____last_update
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip____last_update
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip_input____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__write_uid
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__write_uid
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__write_date
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__write_date
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__level_ids
+msgid "Levels"
+msgstr "المستويات"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__loan_limit
+msgid "Limit"
+msgstr "الحد"
+
+#. module: noptechs_loan
+#: model:hr.salary.rule,name:noptechs_loan.hr_rule_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan_line__loan_id
+#: model:ir.ui.menu,name:noptechs_loan.menu_base_hr_loan_request
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_request_search_form
+msgid "Loan"
+msgstr "القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__loan_account_id
+msgid "Loan Account"
+msgstr "حساب القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__loan_amount
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__loan_amount
+msgid "Loan Amount"
+msgstr "مبلغ القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_employee__loan_count
+msgid "Loan Count"
+msgstr ""
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_type_form_view
+msgid "Loan Definition"
+msgstr "تعريف القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_payslip_input__loan_line_id
+msgid "Loan Installment"
+msgstr "قسط القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__loan_lines
+msgid "Loan Line"
+msgstr "بند القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__name
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__name
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_search
+msgid "Loan Name"
+msgstr "إسم القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__loan_id
+msgid "Loan Ref."
+msgstr "مرجع القرض."
+
+#. module: noptechs_loan
+#: model:ir.model,name:noptechs_loan.model_hr_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Loan Request"
+msgstr "طلب قرض"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_tree_view
+msgid "Loan Requests"
+msgstr "طلبات قرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__loan_type_id
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__loan_type
+msgid "Loan Type"
+msgstr "نوع القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__loan_amount
+msgid "Loan amount"
+msgstr "مبلغ القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__code
+msgid "Loan code"
+msgstr "رمز القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_payslip_input__loan_line_id
+msgid "Loan installment"
+msgstr ""
+
+#. module: noptechs_loan
+#: model:ir.actions.act_window,name:noptechs_loan.act_hr_employee_loan_request
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_employee_form_loan_inherit
+msgid "Loans"
+msgstr "القروض"
+
+#. module: noptechs_loan
+#: model:ir.ui.menu,name:noptechs_loan.menu_hr_loans_and_advances
+msgid "Loans & Advances"
+msgstr ""
+
+#. module: noptechs_loan
+#: model:ir.actions.act_window,name:noptechs_loan.hr_loan_action
+#: model:ir.model,name:noptechs_loan.model_hr_loan_type
+#: model:ir.ui.menu,name:noptechs_loan.menu_hr_loan_type
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_type_form_view
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_search
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_tree
+msgid "Loans Types"
+msgstr "أنواع القروض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__max_loan_amount
+msgid "Max Loan Amount"
+msgstr "الحد الأقصى لمبلغ القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_request_search_form
+msgid "My Requests"
+msgstr "طلباتي"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__name
+msgid "Name of the loan"
+msgstr "إسم القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__guarantor
+msgid "Need Guarantor"
+msgstr "تحتاج كفيل"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__installment
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__installment
+msgid "No Of Installments"
+msgstr "عدد الأقساط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__installment
+msgid "Number of installments"
+msgstr "عدد الأقساط"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إتخاذ إجراء"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan_type__loan_limit__one
+msgid "Once"
+msgstr "مرة واحدة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__paid
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan_line__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: noptechs_loan
+#: model:ir.model,name:noptechs_loan.model_hr_payslip
+msgid "Pay Slip with currency"
+msgstr "قسيمة الراتب بالعملة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__payment_journal_id
+msgid "Payment Journal"
+msgstr ""
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__payment_date
+msgid "Payment Start Date"
+msgstr "تاريخ بدء الدفع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan_line__payslip_id
+msgid "Payslip"
+msgstr "قسيمة الراتب"
+
+#. module: noptechs_loan
+#: model:ir.model,name:noptechs_loan.model_hr_payslip_input
+msgid "Payslip Input"
+msgstr "إدخال قسيمة الراتب"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_line__payslip_id
+msgid "Payslip Ref."
+msgstr "مرجع قسيمة الراتب."
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__period_stop_loan
+msgid "Period of Stop Loan"
+msgstr "فترة وقف القرض"
+
+#. module: noptechs_loan
+#: code:addons/noptechs_loan/models/hr_loan.py:0
+#, python-format
+msgid "Please Compute installment"
+msgstr "الرجاء حساب القسط"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan__state__refuse
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: noptechs_loan
+#: model:ir.actions.act_window,name:noptechs_loan.action_hr_loan_request
+#: model:ir.ui.menu,name:noptechs_loan.menu_hr_loan_request
+msgid "Request for Loan"
+msgstr "طلب قرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__salary_rule_ids
+msgid "Salary Rules"
+msgstr "قواعد الرواتب"
+
+#. module: noptechs_loan
+#: code:addons/noptechs_loan/models/hr_payroll.py:0
+#, python-format
+msgid "Salary Slip of %s for %s"
+msgstr "قسيمة راتب %s لـ %s"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_search
+msgid "Show active loans"
+msgstr "عرض القروض النشطة"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_type_search
+msgid "Show inactive loans"
+msgstr "عرض القروض غير النشطة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.view_loan_request_search_form
+msgid "Status"
+msgstr "الحالة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: noptechs_loan
+#: model_terms:ir.ui.view,arch_db:noptechs_loan.hr_loan_form_view
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan__state__waiting_approval_1
+msgid "Submitted"
+msgstr "مُرسل"
+
+#. module: noptechs_loan
+#: model:ir.model.constraint,message:noptechs_loan.constraint_hr_loan_type_code_uniq
+msgid "The code of the loan must be unique !"
+msgstr "يجب أن يكون رمز القرض فريدًا !"
+
+#. module: noptechs_loan
+#: code:addons/noptechs_loan/models/hr_loan.py:0
+#, python-format
+msgid "The employee has already a pending installment"
+msgstr "الموظف لديه بالفعل قسط معلق"
+
+#. module: noptechs_loan
+#: code:addons/noptechs_loan/models/hr_loan.py:0
+#, python-format
+msgid "The employee have in salary structure for this loan type "
+msgstr "الموظف لديه في هيكل الرواتب لهذا النوع من القروض "
+
+#. module: noptechs_loan
+#: code:addons/noptechs_loan/models/hr_loan.py:0
+#, python-format
+msgid "The loan amount should be less than or equal max loan amount"
+msgstr "يجب أن يكون مبلغ القرض أقل من أو يساوي الحد الأقصى لمبلغ القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.constraint,message:noptechs_loan.constraint_hr_loan_type_name_uniqe
+msgid "The name of the loan must be unique !"
+msgstr "يجب أن يكون اسم القرض فريدًا !"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__times_stop_loan
+msgid "Times of Stop Loan"
+msgstr "أوقات وقف القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__total_amount
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__total_paid_amount
+msgid "Total Paid Amount"
+msgstr "إجمالي المبلغ المدفوع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__total_amount
+msgid "Total loan amount"
+msgstr "إجمالي مبلغ القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__total_paid_amount
+msgid "Total paid amount"
+msgstr "إجمالي المبلغ المدفوع"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__type_loan
+msgid "Type Loan"
+msgstr "نوع القرض"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan_type__loan_limit__unlimit
+msgid "Unlimit"
+msgstr "غير محدود"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: noptechs_loan
+#: model_terms:ir.actions.act_window,help:noptechs_loan.action_hr_loan_request
+msgid "Use this menu to create loan requests."
+msgstr "استخدم هذه القائمة لإنشاء طلبات قرض."
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,help:noptechs_loan.field_hr_loan__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع الإلكتروني"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan_type__decimal_calculate__with
+msgid "With decimal part"
+msgstr "مع الجزء العشري"
+
+#. module: noptechs_loan
+#: model:ir.model.fields.selection,name:noptechs_loan.selection__hr_loan_type__decimal_calculate__without
+msgid "Without decimal part"
+msgstr "بدون الجزء العشري"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__year_employment
+msgid "Years of Employment"
+msgstr "سنوات العمل"
+
+#. module: noptechs_loan
+#: model:ir.model.fields,field_description:noptechs_loan.field_hr_loan_type__decimal_calculate
+msgid "decimal calculating"
+msgstr "حساب عشري"

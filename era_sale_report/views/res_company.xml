@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_company_form_inherit" model="ir.ui.view">
+            <field name="name">view.company.form.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="ar_name"/>
+                </xpath>
+                <xpath expr="//page[@name='general_info']" position="after">
+                    <page string="Report Info" name="report_info">
+                        <group string="English">
+                            <field name="en_address"/>
+                            <field name="phone"/>
+                            <field name="fax"/>
+                            <field name="po_box"/>
+                            <field name="company_registry"/>
+                        </group>
+                        <group string="Arabic">
+                                <field name="ar_address"/>
+                                <field name="ar_phone"/>
+                                <field name="ar_fax"/>
+                                <field name="ar_po_box"/>
+                                <field name="ar_company_registry"/>
+                            </group>
+                        <group string="Sales">
+                            <field name="warranty"/>
+                            <field name="terms_url"/>
+                            <field name="best_regards"/>
+                            <field name="sales_terms"/>
+                            <field name="thanks_msg"/>
+                        </group>
+                        <group string="Purchase">
+                            <field name="purchase_terms_title"/>
+                            <field name="purchase_terms"/>
+                        </group>
+                    </page>
+                    <page string="Invoice Report" name="invoice_report_conf">
+                        <group string="Terms &amp; Condition Arabic">
+                            <field name="hide_arabic"/>
+                            <field name="invoice_ar_terms_title" string="Title"/>
+                            <field name="invoice_ar_terms_msg" />
+                            <field name="invoice_ar_terms_section1" string="Section #1"/>
+                            <field name="invoice_ar_terms_section2" string="Section #2"/>
+                            <field name="invoice_ar_terms_section3" string="Section #3"/>
+                            <field name="invoice_ar_terms_section4" string="Section #4"/>
+                        </group>
+                        <group string="Terms &amp; Condition English">
+                            <field name="hide_english"/>
+                            <field name="invoice_en_terms_title" string="Title"/>
+                            <field name="invoice_en_terms_msg"/>
+                            <field name="invoice_en_terms_section1" string="Section #1"/>
+                            <field name="invoice_en_terms_section2" string="Section #2"/>
+                            <field name="invoice_en_terms_section3" string="Section #3"/>
+                            <field name="invoice_en_terms_section4" string="Section #4"/>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

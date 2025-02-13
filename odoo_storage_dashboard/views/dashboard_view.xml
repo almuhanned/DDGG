@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="odoo_storage_dashboard_form" model="ir.ui.view">
+        <field name="name">odoo.storage.dashboard.form</field>
+        <field name="model">odoo.storage.dashboard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="row" style="background:#f2f2f2;">
+                    <div class="col-xs-12 col-sm-6 col-md-3" style="background:white; margin:8px; border-radius:4px;padding:6px;">
+                        <field name="section1" nolabel="1"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3" style="background:white; margin:8px; border-radius:4px;padding:6px;">
+                        <field name="section2" nolabel="1"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3" style="background:white; margin:8px; border-radius:4px;padding:6px;">
+                        <field name="section4" nolabel="1"/>
+                    </div>
+                </div>
+                <div class="row" style="background:#f2f2f2;">
+                    <div style="background:white; margin:8px; border-radius:4px;padding:6px;width: 100%;">
+                        <field name="section3" nolabel="1"/>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action-->
+    <record id="action_storage_dashboard" model="ir.actions.act_window">
+        <field name="name">Storage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">odoo.storage.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+    <!--    Menu-->
+    <menuitem id="menu_storage_dashboard" name="Storage" parent="base.menu_administration" action="action_storage_dashboard" sequence="1"/>
+
+</odoo>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+
+        <template id="arabic_english_invoice" inherit_id='l10n_gcc_invoice.arabic_english_invoice'>
+            <xpath expr="//t[@t-call='web.external_layout']" position='replace'>
+
+            <t t-call="invoice_report_sa_custom.external_layout_custom">
+                <div class="page" style="padding-top:0px;">
+                    <t t-set="o" t-value="o.with_context(lang='en_US')" />
+                <table class="table table-sm o_main_table" name="invoice_line_table" style="margin-bottom:0px;margin-top:6px;">
+                    <thead style="font-family:arabtype;">
+                    <tr>
+                        <t t-set="colspan" t-value="6"/>
+<!--                        <th style="border-left: 2px solid black;border-bottom: 2px solid black;border-top: 2px solid black; max-width:5%;text-align : center;vertical-align: top;">-->
+                           <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                               <strong>
+                                <span style="font-family:Calibri;font-size:14px;">NO</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                    التسلسل
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black; width:10%;text-align : center;vertical-align: top;">-->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                        <strong>
+                                <span> 
+                                    <span style="font-family:Calibri;font-size:14px;">Item Number</span> 
+                                </span>
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                    رقم الصنف
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black; width:25%;text-align : center;vertical-align: top;" name="th_total">-->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">Description</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                    البيـــــــــــــــــــــــــــــــــــــــــــــــــــــــــان
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black; width:10%;text-align : center;vertical-align: top;" name="th_total">-->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">Quantity </span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                    الكمية
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black; width:10%;text-align : center;vertical-align: top;" name="th_total">-->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">Unit Price</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                     سعر الوحدة
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black;width:10%;text-align : center;vertical-align: top;" name="th_total">-->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">Disc</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                     الخصم
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black;width:10%;text-align : center;vertical-align: top;" name="th_total">   -->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">Exi.Price</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                     اجمالي السعر
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black;vertical-align: top;text-align:center;" name="th_total">-->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">VAT<br/>15%</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                    الضريبة
+                                </span>
+                            </strong>
+                        </td>
+<!--                        <th style="border-top: 2px solid black;border-bottom: 2px solid black;border-right: 2px solid black;text-align:center;vertical-align: top;" name="th_total"> -->
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span style="font-family:Calibri;font-size:14px;">TOTAL</span> 
+                                <span style="font-family:arabtype;font-size:18px;">
+                                    <br/> 
+                                    الاجمالي
+                                </span>
+                            </strong>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody style="font-weight: bold;">
+                    <t t-set="current_subtotal" t-value="0"/>
+                        <t t-set="lines"
+                           t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+
+
+                        <t t-foreach="lines" t-as="line">
+                            <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''" style="font-size:12px;">
+                    <t t-if="not line.display_type" name="account_invoice_line_accountable">
+                        <td  style="border: 1px solid black;border-top:2px solid black;font-family:Calibri;text-align : center;" class="center o_price_total">
+                            <strong><span class="text-nowrap" t-esc="line_index+1"/></strong>
+                        </td>
+                        <td  style="border: 1px solid black;border-top:2px solid black;font-family:Calibri;text-align:center;">
+                            <strong><span t-esc="line.product_id.display_name"/></strong>
+                        </td>
+                        <td  style="border: 1px solid black;border-top:2px solid black;font-family:Calibri;text-align : center;" name="account_invoice_line_name">
+                            <strong>
+                                <span  t-field="line.name" t-options="{'widget': 'text'}" />
+                            </strong>
+                        </td>
+                        <td style="border: 1px solid black;border-top:2px solid black;font-family:Calibri;text-align : center;">
+                            <strong>
+                                <span t-field="line.quantity"/>
+                                <span t-field="line.product_uom_id" groups="uom.group_uom"/>
+                            </strong>
+                        </td>
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span class="text-nowrap" t-field="line.price_unit"/>
+                            </strong>
+                        </td>
+                        <td  style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span class="text-nowrap" t-field="line.discount"/> %
+                            </strong>
+                        </td>
+                        <td  style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span class="text-nowrap" t-field="line.price_subtotal"/>
+                            </strong>
+                        </td>
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align : center;">
+                            <strong>
+                                <span class="text-nowrap" t-field="line.tax_amount"/>
+                            </strong>
+                        </td>
+                        <td style="border: 1px solid black;border-top:2px solid black;text-align:center;">
+                            <strong>
+                                <span class="text-nowrap" t-field="line.price_total"/>
+                            </strong>
+                        </td>
+                       </t>
+                       </tr>
+                        </t>
+                    <tr style="height: 25px;font-family:Calibri;">
+                        <td  style="border: 2px solid black;text-align:center;" colspan="4">
+                            <span style="font-family:arabtype;font-size:30px;">الاجمالي / Total  </span>
+                        </td>
+                        <td  style="border: 2px solid black;text-align:center;">
+                            <strong>
+                                <span  t-esc="'{:,.2f}'.format(sum(rec.price_unit for rec in lines))"/>  
+                            </strong>                        
+                        </td>
+                        <td  style="border: 2px solid black;text-align:center;">
+                            <strong> </strong>
+                        </td>
+                        <td  style="border: 2px solid black;text-align : center;">
+                            <strong>
+                                <span t-esc="'{:,.2f}'.format(sum(rec.price_subtotal for rec in lines))"/>
+                            </strong>
+                        </td>
+                        <td  style="border: 2px solid black;text-align : center;">
+                            <strong>
+                                <span  t-esc="'{:,.2f}'.format(o.amount_tax)"/>
+                            </strong>
+                        </td>
+                        <td  style="border: 2px solid black;text-align : center;">
+                            <strong>
+                                <span t-esc="'{:,.2f}'.format(sum(rec.price_total for rec in lines))"/>
+                            </strong>
+                        </td>
+                    </tr>
+                </tbody>
+                <tr style="height:30px;font-family:frutiger;text-align:center;font-weight:bold;">
+                    <td style="border: 1px solid grey;" rowspan="5" colspan="2">
+                        <img t-if="o.l10n_sa_qr_code_str"  style="width:100%;height:100%;margin-top:5px;"
+                 
+                            t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 100, 100)"/>
+                    </td>
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:14px;border: 1px solid grey;overflow: hidden;white-space: nowrap;" colspan="1">
+                        <span  style="font-family:Calibri;" t-esc="'{:,.2f}'.format(sum(rec.quantity for rec in lines))"/>
+                    </td>
+                    <td style="font-size:12px;border: 1px solid grey;overflow: hidden;white-space: nowrap;" colspan="1">
+                        <span style="font-family:arabtype;font-size:20px;">
+                            اجمالي الكمية 
+                        </span>
+                    </td>
+                    <td style="font-size:14px;border-left: 3px solid black;border-right: 3px solid black;border-bottom: 1px solid grey;overflow: hidden;white-space: nowrap;" colspan="2">
+
+                        <span style="font-family:Calibri;">Subtotal/</span>
+                        <span style="font-family:arabtype;font-size:18px;">المجموع</span>
+                    </td>
+                    <td style="font-size:14px;border-bottom: 3px solid black;border-right: 3px solid black;border-left: 3px solid black;overflow: hidden;white-space: nowrap;" colspan="2">   
+                        <span style="font-family:Calibri;" t-esc="'{:,.2f}'.format(sum(rec.price_subtotal for rec in lines))"/>
+                    </td>
+                </tr>
+                <tr style="height:30px;font-family:frutiger;text-align:center;font-weight: bold;">
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                            
+                    </td>
+                    <td style="font-size:12px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:12px;border-left: 3px solid black;border-right: 3px solid black;border-bottom: 1px solid grey;" colspan="2">
+                        <span style="font-family:Calibri;"> Uneveral Disc/</span>
+                        <span style="font-family:arabtype;font-size:20px;">خصم عام</span>
+                    </td>
+                    <td style="font-size:14px;border-bottom: 1px solid grey;border-right: 3px solid black;border-left: 3px solid black;" colspan="2">
+                        <span style="font-family:Calibri;" t-esc="'{:,.2f}'.format(o.ks_amount_discount)"/>
+                            
+                    </td>
+                </tr>
+                <tr style="height:30px;font-family:frutiger;text-align:center;font-weight: bold;">
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                            
+                    </td>
+                    <td style="font-size:12px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:12px;border-left: 3px solid black;border-right: 3px solid black;border-bottom: 1px solid grey;" colspan="2">
+                        <span style="font-family:Calibri;"> Trade Disc/</span>
+                        <span style="font-family:arabtype;font-size:20px;">خصم اضافي</span>
+                    </td>
+                    <td style="font-size:14px;border-bottom: 1px solid grey;border-right: 3px solid black;border-left: 3px solid black;" colspan="2">
+                        <span style="font-family:Calibri;" t-esc="'{:,.2f}'.format(o.special_discount)"/>
+                            
+                    </td>
+                </tr>
+                <tr style="height:30px;font-family:frutiger;text-align:center;font-weight: bold;">
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:14px;border: 1px solid grey;" colspan="1">
+                            
+                    </td>
+                    <td style="font-size:12px;border: 1px solid grey;" colspan="1">
+                    </td>
+                    <td style="font-size:12px;border-left: 3px solid black;border-right: 3px solid black;" colspan="2">
+                        <strong><span style="font-family:Calibri;">
+                        VAT Total/15%</span><span style="font-family:arabtype;font-size:20px;">قيمة الضريبة </span> </strong>
+                    </td>
+                    <td style="font-size:14px;border-bottom: 1px solid grey;border-right: 3px solid black;border-left: 3px solid black;" colspan="2">
+                        <span style="font-family:Calibri;" t-esc="o.amount_tax"/>
+                    </td>
+                </tr>
+                <tr style="max-width:30px;font-family:frutiger;text-align:center;font-weight: bold;">
+                    <td style="font-size:20px;border: 1px solid grey;font-family:arabtype;" colspan="3">
+                        <span t-esc="o.total_in_text"/> لا غير
+                    </td>
+                    <td class="text-nowrap" style="font-size:14px;border-left: 3px solid black;border-right: 3px solid black;border-bottom: 3px solid black;border-top: 1px solid grey;" colspan="2">
+                        <span style="font-family:Calibri;">Total/</span>
+                        <span style="font-family:arabtype;font-size:20px;">الاجمالي النهائي</span> 
+                    </td>
+                    <td style="font-size:14px;border-bottom: 3px solid black;border-right: 3px solid black;border-left: 3px solid black;font-family:Calibri;" colspan="2">
+                        <span style="font-family:Calibri;" t-esc="'{:,.2f}'.format(sum(rec.price_total for rec in lines))"/>
+                    </td>
+                </tr>
+
+            </table>
+                <br/><br/>
+                <table width="100%" style="margin-bottom:30px;float:right;">
+                        <tr style="font-family:arabtype;text-align:center;font-size:25px;font-weight:900;">
+                            <td width="33%">
+                                الختم 
+                            </td>
+                            <td width="33%">
+                                التوقيع 
+                            </td>
+                            <td width="33%">
+                                اسم المستلم 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+
+
+            
+            </xpath>
+        </template>
+    </data>
+</odoo>

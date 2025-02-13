@@ -1,0 +1,310 @@
+<odoo>
+    <data>
+        <template id="external_layout_standard_custom">
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img t-att-src="'data:image/*;base64,%s' % to_text(company.header)"
+                         t-att-width="company.header_width" t-att-height="company.header_height"/>
+                    </div>
+                    <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                </div>
+                <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                    <div class="col-12">
+                        <div class="text-center" style="font-family:arabtype;font-size:60px;color:#050864;font-weight: 900;margin-top:0px;">
+                            <t t-if="o.move_type == 'in_invoice'">
+                                <strong>
+                                فاتورة مشتريات<br/>
+                                </strong>
+                            </t>
+                               <t t-if="o.move_type == 'in_refund'">
+                                <strong>
+                                مرتجع مشتريات<br/>
+                                </strong>
+                            </t>
+
+                            <t t-if="o.move_type == 'out_refund'">
+                                <strong>
+                                مرتجع مبيعات <br/>
+                                </strong>
+                            </t>
+                            <t t-if="o.move_type == 'out_invoice'">
+                                <strong>
+                                فاتورة مبيعات ضريبية <br/>
+                                </strong>
+                             </t>
+                        </div>
+                         <center>
+                            <table width="30%" style="margin-top:0px;">
+                                <tr>
+                                    <td class="text-center" style="font-size:35px;font-family:palatino;color:#050864;border: 3px solid black;width:24%;font-weight: 900;">
+                                        <strong>
+                                            <span t-esc="o.name"/>
+                                        </strong><br/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </center>
+                        <div class="text-center" style="font-family:frutiger;font-size:16px;color:#050864;font-weight: 900;">
+                            <strong>VAT Registeration:<span t-esc="o.company_id.vat"/></strong>
+                        </div>
+                        <br/>
+                        <table style="font-size:14px;border-left: 2px solid black;border-right: 2px solid black;border-top: 2px solid black;color:#050864;text-align:center;" width="100%">
+                            <tr style="border-bottom: 1px solid grey;">
+                                <td style="border: 2px solid black;text-align:left;" width="25%">
+                                    <t t-if="o.move_type == 'in_invoice'">
+                                        <strong>
+                                            <span style="font-family:Calibri;"> Vendor Name/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">إسم المورد</span>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span style="font-family:Calibri;"> Customer Name/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">إسم العميل</span>
+                                        </strong> 
+                                    </t>
+                                </td>
+                                <td  style="text-align:center;border: 2px solid black;" width="25%">
+                                    <t t-if="o.partner_id.lang == 'ar_001'">
+                                        <strong>
+                                            <strong><span style="font-family:arabtype;font-size:20px;" t-esc="o.partner_id.name[:25]"/></strong>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong><span style="font-family:Calibri;" t-esc="o.partner_id.name[:25]"/></strong>
+                                    </t>
+                                </td>
+                                <td  style="border: 2px solid black;text-align : left;" width="25%">
+                                    <strong>
+                                        <span style="font-family:Calibri;">Invoice Date/</span>
+                                        <span style="font-family:arabtype;font-size:20px;">تاريخ الفاتورة</span>
+                                    </strong> 
+                                </td>
+                                <td  style="text-align:center;border: 2px solid black;" width="25%" >
+                                    <strong><span style="font-family:Calibri;" t-esc="o.invoice_date"/></strong>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid grey;">
+                                <td  style="border: 2px solid black;text-align : left;">
+                                    <t t-if="o.move_type == 'in_invoice'">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Vendor Code/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">رقم المورد</span>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Customer Code/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">رقم العميل</span>
+                                        </strong>
+                                    </t>
+                                    </td>
+                                <td  style="text-align:center;border: 2px solid black;"  >
+                                    <strong><span style="font-family:Calibri;" t-esc="o.partner_id.ref"/></strong>
+                                </td>
+                                <td style="border: 2px solid black;text-align : left;">
+                                    <strong>
+                                        <span style="font-family:Calibri;">Due Date/</span>
+                                        <span style="font-family:arabtype;font-size:20px;">تاريخ الاستحقاق</span>
+                                    </strong>
+                                </td>
+                                <td style="text-align : center;border: 2px solid black;"  >
+                                    <strong><span style="font-family:Calibri;" t-esc="o.invoice_date_due"/></strong>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid grey;">
+                                <td style="border: 2px solid black;text-align : left;">
+                                    <t t-if="o.move_type == 'in_invoice'">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Gust.VAT.No/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">رمز المورد الضريبي</span>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Gust.VAT.No/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">رمز العميل الضريبي</span>
+                                        </strong>
+                                    </t>
+                                </td>
+                                <td  style="text-align : center;border: 2px solid black;"  >
+                                    <strong><span style="font-family:Calibri;" t-esc="o.partner_id.vat"/></strong>
+                                </td>
+                                <td style="border: 2px solid black;text-align : left;">
+                                    <strong>
+                                        <span style="font-family:Calibri;">Date Of Supply/</span>
+                                        <span style="font-family:arabtype;font-size:20px;">تاريخ التسليم</span>
+                                    </strong>
+                                </td>
+                                <td style="text-align : center;border: 2px solid black;"  >
+                                    <strong><span style="font-family:Calibri;" t-esc="o.l10n_sa_delivery_date"/></strong>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid grey;">
+                                <t t-if="o.move_type == 'out_invoice' or o.move_type == 'out_refund'">
+                                        <td  style="border: 2px solid black;text-align : left;">
+                                                <strong>
+                                                    <span style="font-family:Calibri;">Customer S.O/</span>
+                                                    <span style="font-family:arabtype;font-size:20px;">رقم امر البيع</span>
+                                                </strong>
+                                           
+                                        </td>
+                                        <td  style="text-align:center;border: 2px solid black;"  >
+                                            <strong><span style="font-family:Calibri;" t-esc="o.invoice_origin"/></strong>
+                                        </td>
+                                    </t>
+                                    <t t-if="o.move_type == 'in_invoice' or o.move_type == 'in_refund'">
+                                        <td  style="border: 2px solid black;text-align:left;">
+                                            <t t-if="o.move_type == 'in_invoice'">
+                                                <strong>
+                                                    <span style="font-family:Calibri;">Bill Reference/</span>
+                                                    <span style="font-family:arabtype;font-size:20px;">الرقم المرجعي للفاتورة</span>
+                                                </strong>
+                                            </t>
+                                            <t t-else="">
+                                                <strong>
+                                                    <span style="font-family:Calibri;">Vendor P.O/</span>
+                                                    <span style="font-family:arabtype;font-size:20px;">رقم امر الشراء</span>
+                                                </strong>
+                                            </t>
+
+                                        </td>
+                                         <td  style="text-align:center;border: 2px solid black;"  >
+                                            <strong><span style="font-family:Calibri;" t-esc="o.ref"/></strong>
+                                        </td>
+                                    </t>
+                                    <td style="border: 2px solid black;text-align:left;">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Branch/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">الفرع</span>
+                                        </strong>
+                                    </td>
+                                    <td style="text-align : center;"  >
+                                        <strong><span style="font-family:Calibri;" t-esc="o.branch_id.name"/></strong>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid grey;">
+                                    <td  style="border: 2px solid black;text-align:left;">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Sales Person ID/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">رقم المندوب</span>
+                                        </strong>
+                                    </td>
+                                    <td  style="text-align:center;border: 2px solid black;"  >
+                                        <strong><span style="font-family:Calibri;" t-esc="o.salesperson.name"/></strong>
+                                    </td>
+                                    <td style="border: 2px solid black;text-align:left;">
+                                        <strong>
+                                            <span style="font-family:Calibri;">Site Code/</span>
+                                            <span style="font-family:arabtype;font-size:20px;">رمز المستودع</span>
+                                        </strong>
+                                    </td>
+                                    <td style="text-align:center;border: 2px solid black;"  >
+                                        <strong>
+                                            <span t-esc="o.inv_sale_id.warehouse_id.code"/>
+                                            <span t-esc="o.purchase_id.picking_type_id.warehouse_id.code"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid grey;">
+                                    <td  style="text-align: left;border: 2px solid black;"  >
+                                        <strong> <span style="font-family:arabtype;font-size:20px;">هاتف رقم </span></strong>
+                                    </td>
+                                    <td  style="border: 2px solid black;text-align:center;">
+                                         <strong><span style="font-family:Calibri;" t-esc="o.partner_id.phone"/></strong>
+                                    </td>
+
+
+                                    <td style="text-align:center;border: 2px solid black;text-align:left;">
+                                        <t t-if="o.move_type == 'in_invoice'">
+                                            <strong>
+                                            <span style="font-family:arabtype;font-size:20px;"> عنوان المورد </span>
+                                            </strong>
+                                        </t>
+                                        <t t-else="">
+                                            <strong>
+                                                <span style="font-family:arabtype;font-size:20px;"> عنوان العميل </span>
+                                            </strong>
+                                        </t>
+                                    </td>
+                                    <td style="border: 2px solid black;text-align:center;">
+                                        <strong><span style="font-family:arabtype;font-size:20px;" t-esc="o.partner_id.street"/></strong>
+                                    </td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="pt-5">
+                    <!-- This div ensures that the address is not cropped by the header. -->
+                    <t t-call="web.address_layout"/>
+                </div>
+                <t t-out="0"/>
+            </div>
+
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+<!--                        <div t-field="company.report_footer"/>-->
+                    </ul>
+
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template id="external_layout_custom">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-if="company.external_report_layout_id" t-call="invoice_report_sa_custom.external_layout_standard_custom">
+            <t t-out="0"/></t>
+            <t t-else="else" t-call="invoice_report_sa_custom.external_layout_standard_custom">
+            <t t-out="0"/></t>
+        </template>
+
+        <record id="paperformat_aren" model="report.paperformat">
+            <field name="name">A4 Label Sheet</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">130</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="dpi">96</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">120</field>
+        </record>
+        <record id="account.account_invoices" model="ir.actions.report">
+            <field name="name">Invoices</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">account.report_invoice_with_payments</field>
+            <field name="report_file">account.report_invoice_with_payments</field>
+            <field name="print_report_name">(object._get_report_base_filename())</field>
+            <field name="attachment">(object.state == 'posted') and ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+            <field name="groups_id" eval="[(4, ref('account.group_account_invoice')),
+ (4, ref('account.group_account_readonly'))]"/>
+            <field name="paperformat_id" ref="paperformat_aren"/>
+        </record>
+    </data>
+</odoo>

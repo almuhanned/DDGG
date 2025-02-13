@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<template id="portal_my_home_noptech" inherit_id="portal.portal_my_home">
+         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">My Portal</t>
+                <t t-set="url" t-value="'/hr/self/service'"/>
+                <!-- <t t-set="placeholder_count" t-value="'lead_count'"/> -->
+            </t>
+        </xpath>
+        <xpath expr="//h3" position="replace">
+        	<div class = 'row mb-2'>
+        		<div class='col-md-9'>
+        	<h3 class = 'd-inline'>Documents</h3></div>
+        	<div class='col-md-3 float-right' t-if='is_employee'>
+            <a href = '/hr/self/service' class = 'btn btn-primary'>My Portal</a>
+
+        </div>
+    </div>
+        </xpath>
+    </template>
+
+    <template id="portal_layout_breadcrumb_titles" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">    
+            <li t-if="page_name == 'leave_allocation'">
+                <span >Leave Allocation</span>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="not_employee_template">
+        <t t-call="website.layout">
+        	<div id="wrap" class="oe_structure">
+                        <div class="container mt16 mb16">
+                            <div class="row">
+                                <section class="error">
+                                    <!-- Content -->
+                                    <div class="row p-2">
+                                        <div class="col-md-6 p-3 ">
+                                            <img class="ml-3 img img-responsive rounded-circle "
+                                                 src="/hr_self_service/static/src/img/lo.png"/>
+                                        </div>
+                                        <div class="text-center col-md-6 p-5 mt-5">
+                                            <h1 class="error_message">Employee not
+                                                found
+                                            </h1>
+                                            <br/>
+                                            <div class="message_body">Sorry,
+                                                 you are not an employee.
+                                            </div>
+                                            <br/>
+                                            <a class="btn btn-info public-folder-link"
+                                               href="/">Get Back To Home
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+        </t>
+    </template>
+
+<template id="portal_my_contracts" name="My Contracts">
+        <t t-call="portal.portal_layout">
+            <t t-if="not contracts">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no contracts.
+                </div>
+            </t>
+            <t t-if="contracts" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th class="text-right">
+                            Department
+                        </th>
+                        <th class="text-right">
+                            Job Title
+                        </th>
+                        <th class="text-right">
+                            Type
+                        </th>
+                        <th class="text-right">
+                            Start Date 
+                        </th>
+                    </tr>
+                </thead>
+                        <tbody>
+                            <tr t-foreach="contracts" t-as="contract">
+                                <td>
+                                    <span t-esc="contract.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-esc="contract.department_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-esc="contract.job_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-esc="contract.structure_type_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <t t-esc="contract.date_start"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </t>
+        </t>
+    </template>
+
+
+
+<!--<template id="portal_my_appraisals" name="My Appraisals">-->
+<!--        <t t-call="portal.portal_layout">-->
+<!--            <t t-if="not appraisals">-->
+<!--                <div class="alert alert-warning mt8" role="alert">-->
+<!--                    There are no appraisals.-->
+<!--                </div>-->
+<!--            </t>-->
+<!--            <t t-if="appraisals" t-call="portal.portal_table">-->
+<!--                <thead>-->
+<!--                    <tr>-->
+<!--                        <th>-->
+<!--                          Employee Name-->
+<!--                        </th>-->
+<!--                        <th>-->
+<!--                          Department-->
+<!--                        </th>-->
+<!--                        <th>-->
+<!--                          Appraisal Deadline-->
+<!--                        </th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                    <tr t-foreach="appraisals" t-as="appraisal">-->
+<!--                        <td>-->
+<!--                            <span t-esc="appraisal.employee_id.name"/>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span t-esc="appraisal.department_id.name"/>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <span t-esc="appraisal.date_close"/>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                </tbody>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--    </template>-->
+
+
+
+    <template id="portal_my_expenses" name="My Expences">
+        <t t-call="portal.portal_layout">
+            <t t-set="title">My Expense</t>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contractExpence">
+              Create Expense
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="contractExpence" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Expense</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/my/expenses" method="POST" enctype="multipart/form-data" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="row">
+                    <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="name">Expense Name</label> 
+                            <input id="name" name="name" class="form-control here"  type="text" />
+                          </div> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="product" >Product</label>
+                            <select id="product" name="product" class="form-control">
+                              <option value="" >product..</option>
+                                  <t t-foreach="products" t-as="s">
+                                      <option t-att-value="s.id">
+                                          <t t-esc="s.name" />
+                                      </option>
+                                  </t>
+                          </select>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="unit_amount">Unit Price</label> 
+                            <input id="unit_amount" name="unit_amount" class="form-control here"  type="text" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="quantity">Quantity</label> 
+                            <input id="quantity" name="quantity"  class="form-control here" type="text"/>
+                          </div> 
+                        </div>
+                    </div>
+
+        <div class="col-md-12 col-sm-10">
+            <button name="submit" type="submit" class="btn btn-primary pull-right mb32"> Next <span class="fa fa-long-arrow-right"/></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>        
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <t t-if="not expenses">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no expenses.
+                </div>
+            </t>
+            <t t-if="expenses" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Product
+                        </th>
+                        <th>
+                          Total
+                        </th>
+                        <th>
+                          State
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="expenses" t-as="expense">
+                        <td>
+                            <span t-esc="expense.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="expense.product_id.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="expense.total_amount"/>
+                        </td>
+                        <td>
+                            <span t-esc="expense.state"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    
+    <template id="portal_my_advanced_salary" name="My Advanced Salary Requests">
+        <t t-call="portal.portal_layout">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RequestAdvancedSalary">
+              Request Advanced Salary
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="RequestAdvancedSalary" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Request Advanced Salary</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/my/advanced_salary" method="POST" enctype="multipart/form-data" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="date">Date</label> 
+                            <input id="date" name="date" class="form-control "  type="date" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="amount">Amount</label> 
+                            <input id="amount" name="amount" class="form-control here"  type="text" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="reason">Reason</label> 
+                            <input id="reason" name="reason"  class="form-control here" type="text"/>
+                          </div> 
+                        </div>
+                    </div>
+
+        <div class="col-md-12 col-sm-10">
+            <button name="submit" type="submit" class="btn btn-primary pull-right mb32"> Next <span class="fa fa-long-arrow-right"/></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>        
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <t t-if="not advanced_salary">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no advanced salary requests.
+                </div>
+            </t>
+            <t t-if="advanced_salary" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="advanced_salary" t-as="o">
+                        <td>
+                            <span t-esc="o.name"/>
+                        </td>
+                        
+                        <td>
+                            <span t-esc="o.date"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.advance"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.state"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+     <template id="portal_my_payslips" name="My Advanced Salary Requests">
+        <t t-call="portal.portal_layout">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Requestlpayslip">
+              Request Payslip
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Requestlpayslip" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Request Payslip</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/my/payslips" method="POST" enctype="multipart/form-data" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="row">
+                        
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="date_from">Date From</label> 
+                            <input id="date_from" name="date_from" class="form-control "  type="date" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="date_to">Date To</label> 
+                            <input id="date_to" name="date_to" class="form-control "  type="date" />
+                          </div> 
+                        </div>
+                        
+                    </div>
+
+        <div class="col-md-12 col-sm-10">
+            <button name="submit" type="submit" class="btn btn-primary pull-right mb32"> Next <span class="fa fa-long-arrow-right"/></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>        
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <t t-if="not payslips">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no payslips.
+                </div>
+            </t>
+            <t t-if="payslips" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Date From</th>
+                        <th>Date To</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="payslips" t-as="o">
+                        <td>
+                            <span t-esc="o.date_from"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.date_to"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.state"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_my_loans" name="My Advanced Salary Requests">
+        <t t-call="portal.portal_layout">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Requestloan">
+              Request Loan
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Requestloan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Request Loan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/my/loans" method="POST" enctype="multipart/form-data" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="loan_type_id" >Type</label>
+                            <select id="loan_type_id" name="loan_type_id" class="form-control">
+                              <option value="" >Type..</option>
+                                  <t t-foreach="loan_types" t-as="s">
+                                      <option t-att-value="s.id">
+                                          <t t-esc="s.name" />
+                                      </option>
+                                  </t>
+                          </select>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="date">Date</label> 
+                            <input id="date" name="date" class="form-control "  type="date" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="amount">Amount</label> 
+                            <input id="amount" name="amount" class="form-control here"  type="text" />
+                          </div> 
+                        </div>
+                    </div>
+                    <div class='row'>
+                          <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="installment">No. of Installments</label> 
+                            <input id="installment" name="installment"  class="form-control here" type="text"/>
+                          </div> 
+                        </div>
+                    </div>
+
+        <div class="col-md-12 col-sm-10">
+            <button name="submit" type="submit" class="btn btn-primary pull-right mb32"> Next <span class="fa fa-long-arrow-right"/></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>        
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <t t-if="not loans">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no loans.
+                </div>
+            </t>
+
+            <t t-if="loans" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Date </th>
+                        <th>Loan Type</th>
+                        <th>No. Installments</th>
+                        <th>State</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="loans" t-as="o">
+                        <td>
+                            <span t-esc="o.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.loan_amount"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.date"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.loan_type_id.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.installment"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.state"/>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="portal_my_time_off" name="My Time off Requests">
+        <t t-call="portal.portal_layout">
+
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Timeoff">
+              Create Timeoff
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Timeoff" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Timeoff</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/my/time_off" method="POST" enctype="multipart/form-data" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="time_off_type" >Type</label>
+                            <select id="time_off_type" name="time_off_type" class="form-control">
+                              <option value="" >Type..</option>
+                                  <t t-foreach="types" t-as="s">
+                                      <option t-att-value="s.id">
+                                          <t t-esc="s.name" />
+                                      </option>
+                                  </t>
+                          </select>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="date_from">Date From</label> 
+                            <input id="date_from" name="date_from" class="form-control "  type="date" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="date_to">Date To</label> 
+                            <input id="date_to" name="date_to"  class="form-control " type="date"/>
+                          </div> 
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="name">Reason</label> 
+                            <input id="name" name="name"  class="form-control " type="text"/>
+                          </div> 
+                        </div>
+                    </div>
+
+        <div class="col-md-12 col-sm-10">
+            <button name="submit" type="submit" class="btn btn-primary pull-right mb32"> Next <span class="fa fa-long-arrow-right"/></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>        
+                </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            
+            <t t-if="not time_off">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no time off requests.
+                </div>
+            </t>
+
+            <t t-if="time_off" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Time off Type</th>
+                        <th>Date From </th>
+                        <th>Date To</th>
+                        <th>Description</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="time_off" t-as="o">
+                        <td>
+                            <span t-esc="o.holiday_status_id.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.request_date_from"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.request_date_to"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.state"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_my_leave_allocation" name="My Leave Allocations">
+        <t t-call="portal.portal_layout">
+
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RequestLeaveAllocation">
+              Request Leave Allocation
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="RequestLeaveAllocation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Request Leave Allocation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form action="/my/leave_allocation" method="POST" enctype="multipart/form-data" class="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="name">Name</label> 
+                            <input id="name" name="name" class="form-control here"  type="text" />
+                          </div> 
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="time_off_type" >Type</label>
+                            <select id="time_off_type" name="time_off_type" class="form-control">
+                              <option value="" >Type..</option>
+                                  <t t-foreach="types" t-as="s">
+                                      <option t-att-value="s.id">
+                                          <t t-esc="s.name" />
+                                      </option>
+                                  </t>
+                          </select>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="number_of_days_display">Duration</label> 
+                            <input id="number_of_days_display" name="number_of_days_display"  class="form-control here" type="text"/>
+                          </div> 
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="reason">Reason</label> 
+                            <input id="reason" name="reason"  class="form-control here" type="text"/>
+                          </div> 
+                        </div>
+                    </div>
+
+        <div class="col-md-12 col-sm-10">
+            <button name="submit" type="submit" class="btn btn-primary pull-right mb32"> Next <span class="fa fa-long-arrow-right"/></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>        
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <t t-if="not leave_allocation">
+                <div class="alert alert-warning mt8" role="alert">
+                    There are no leave allocation requests.
+                </div>
+            </t>
+
+            <t t-if="leave_allocation" t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Allocation Type </th>
+                        <th>Number Of Days</th>
+                        <th>State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="leave_allocation" t-as="o">
+                        <td>
+                            <span t-esc="o.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.holiday_status_id.name"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.duration_display"/>
+                        </td>
+                        <td>
+                            <span t-esc="o.state"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+</odoo>

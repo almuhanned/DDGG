@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.cron" id="zid_product_sync_cron">
+			<field name="name">Zid Product Sync Cron</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">minutes</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False" />
+			<field name="model_id" ref="model_zid_integration" />
+			<field name="state">code</field>
+			<field name="code">model.cron_sync_products()</field>
+		</record>
+
+		<record model="ir.cron" id="zid_order_sync_cron">
+			<field name="name">Zid Order Sync Cron</field>
+			<field name="interval_number">6</field>
+			<field name="interval_type">hours</field>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False" />
+			<field name="model_id" ref="model_zid_integration" />
+			<field name="state">code</field>
+			<field name="active" eval="False"/>
+			<field name="code">model.cron_sync_orders()</field>
+		</record>
+	</data>
+</odoo>

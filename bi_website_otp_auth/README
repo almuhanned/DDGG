@@ -1,0 +1,11 @@
+Date: 22/03/2022
+Version: 15.0.0.1
+	- Added condition for avoid traceback error.
+
+Date: 13/06/2022
+Version: 15.0.0.2
+	- fix the issue of when refresh singup of login page after send otp and before expired only new genrated otp will be used for login/signup. 
+
+Date: 02/08/2022
+Version: 15.0.0.3
+	- change the class name for login and signup view.

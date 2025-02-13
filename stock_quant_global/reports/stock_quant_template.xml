@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="stock_quant_template">
+            <t t-call="web.html_container">
+                <div class="header">
+                    <div class="row" dir="rtl"
+                         style="font-family: almarai;font-size:12px;width: 100%;height: 113px;margin-right: 1px;border: 1px solid black">
+                        <div style="width: 50%;padding-right:7px;" class="text-left">
+                            <br/>
+                            <strong>
+                                <span t-esc="company_name"/>
+                            </strong>
+                            <br/>
+                            <t t-if="company_street">
+                                <span t-esc="company_street"/>
+                            </t>
+                            <t t-if="company_street2">
+                                <span>,</span>
+                                <span t-esc="company_street2"/>
+                            </t>
+                            <t t-if="company_city">
+                                <span>,</span>
+                                <span t-esc="company_city"/>
+                            </t>
+                            <t t-if="company_state">
+                                <span>,</span>
+                                <span t-esc="company_state"/>
+                            </t>
+                            <br/>
+                            <t t-if="company_phone">
+                                <span t-esc="company_phone"/>
+                                <br/>
+                            </t>
+
+                            <t t-if="company_email">
+                                <span t-esc="company_email"/>
+                                <br/>
+                            </t>
+                            <t t-if="company_vat">
+                                <span t-esc="company_vat"/>
+                            </t>
+                        </div>
+
+                        <div style="width: 50%;padding-left:5px;padding-top:5px;" class="text-right">
+                            <img t-attf-src="data:image/*;base64,{{company_logo}}" width="100"
+                                 height="100"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <font style="font-family: almarai;font-size:12px;">
+                        <h6 class="text-center">
+                            <strong class="text-center">
+                                <span>تقرير الكميات</span>
+                            </strong>
+                        </h6>
+                        <table dir="rtl" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;width:6%">
+                                        <strong>#</strong>
+                                    </th>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;width:12%;">
+                                        <strong>رقم الصنف</strong>
+                                    </th>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;">
+                                        <strong>إسم الصنف</strong>
+                                    </th>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;width:20%;">
+                                        <strong>الموقع</strong>
+                                    </th>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;width:10%;">
+                                        <strong>في المخزن</strong>
+                                    </th>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;width:6%;">
+                                        <strong>المحجوزة</strong>
+                                    </th>
+                                    <th class="text-center" style="background-color:#6ec5ff;border: 1px solid black;line-height: 7px;width:6%;">
+                                        <strong>المتاحة</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="docs" t-as="doc">
+                                    <tr style="height: 5px;">
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-esc="doc_index+1"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-field="doc.sudo().product_id.default_code"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-field="doc.sudo().product_id.name"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-field="doc.sudo().location_id.name"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-field="doc.sudo().on_hand_qty"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-field="doc.sudo().reserved_quantity"/>
+                                        </td>
+                                        <td class="text-center" style="border: 1px solid black;line-height: 6px;">
+                                            <span t-field="doc.sudo().available_qty"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </font>
+                </div>
+
+                <div t-attf-class="footer o_standard_footer"
+                     style="font-family: almarai;font-size:12px;width: 100%;height: 80px;margin-left: 1px;">
+                    <div class="text-center" dir="rtl" style="border-top: 2px solid black;">
+                        <div class="text-muted">
+                            صفحة:
+                            <span class="page"/>
+                            /
+                            <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

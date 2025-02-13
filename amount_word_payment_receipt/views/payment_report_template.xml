@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_report_payment_document_inherit_amount_word" inherit_id="account.report_payment_receipt_document">
+            <xpath expr="//table" position="before">
+            <p t-if="o.is_show_amount_in_word" id="total_in_words" class="mb16">
+                <strong>Total (In Words): </strong>
+                <span t-field="o.custom_amount_in_word"/>
+            </p>
+                <br/>
+                <br/>
+        </xpath>
+    </template>
+</odoo>

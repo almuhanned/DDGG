@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherit_period_view_employee_form" model="ir.ui.view">
+            <field name="name">hr.view.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="tn_hr_annual_leave_auto_allocation.custom_view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="rejoin_date" position="after">
+                    <field name="rejoin_period"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

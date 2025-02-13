@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="view_order_form_inherit" model="ir.ui.view">
+           <field name="name">view.order.form.inherit</field>
+           <field name="model">sale.order</field>
+           <field name="inherit_id" ref="sale.view_order_form"/>
+           <field name="arch" type="xml">
+               <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                   <field name="contact_person"/>
+                   <field name="contact_phone"/>
+                   <field name="contact_email"/>
+                   <field name="project_name"/>
+                   <field name="location"/>
+               </xpath>
+               <xpath expr="//label[@for='commitment_date']" position="replace">
+                   <label for="delivery_data" string="Delivery Date"/>
+               </xpath>
+               <xpath expr="//field[@name='commitment_date']" position="replace">
+                   <field name="delivery_data"/>
+                   <field name="commitment_date" invisible="1"/>
+               </xpath>
+
+           </field>
+       </record>
+
+    </data>
+</odoo>

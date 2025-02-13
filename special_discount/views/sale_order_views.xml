@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="sp_discount_sale_order_form_inherited" model="ir.ui.view">
+            <field name="name">sp.discount.sale_order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//form/sheet/notebook/page/group" position="before">
+                    <br/>
+                    <div class="ks_container">
+                        <label for="special_discount_type" string="Special Discount Type:"/>
+                        <field name="special_discount_type" class="oe_inline"/>
+                    </div>
+
+                    <div class="ks_container">
+                        <label for="special_discount_rate" string="Special Discount :"/>
+                        <field name="special_discount_rate" class="oe_inline"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='ks_amount_discount']" position="after">
+                    <field name="special_discount" attrs="{'invisible':[('ks_enable_discount','!=',True),('special_discount','=',0)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,20 @@
+{
+    "name": "ZID Store Connector",
+    "summary": "Integrate Odoo with ZID store",
+    "version": "15.0.2.0.0",
+    "category": "Connectors",
+    "license": "Other proprietary",
+    "depends": ["base", "stock", "mail", "sales_team", "sale_management"],
+    "data": [
+        "security/zid_security.xml",
+        "security/ir.model.access.csv",
+        "data/ir_cron.xml",
+        "views/zid_integration_views.xml",
+        "views/zid_payment_method_views.xml",
+        "views/product_category_views.xml",
+        "views/product_template_views.xml",
+        "views/sale_order_views.xml",
+    ],
+    "installable": True,
+    "application": True,
+}

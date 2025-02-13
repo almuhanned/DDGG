@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="payroll_report_inherit_salary_rule_form" model="ir.ui.view">
+            <field name="name">payroll.report.inherit.salary.rule.form</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='appears_on_payslip']" position="after">
+                    <field name="appears_on_report"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

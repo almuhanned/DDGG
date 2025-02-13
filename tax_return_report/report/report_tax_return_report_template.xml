@@ -1,0 +1,142 @@
+<odoo>
+	<data>
+        <template id="tax_report_layout">
+	        <div t-attf-class="header">
+		        <table width="100%">
+		        	<tr>
+		                <td width="33%" style="font-size:14px;font-weight: bold;">
+		                	<div style="line-height:50px;">
+		                		Snabel al-meshaan
+		                	</div>
+		                	<div style="line-height:50px;">
+		                		ksa-Hail -saptco
+		                	</div>
+		                	<div style="line-height:50px;">
+		                		L:3353001291 TEL:065310101
+		                	</div>		                    
+		                </td>
+		                <td width="33%">
+		                	<center>
+		                        <img  src="/tax_return_report/static/img/logo.jpg" style="max-height: 150px;width: 150px;" alt="Logo"/>
+		                    </center>
+		                </td>
+		                <td width="34%" style="font-size:12px;font-weight: bold;display: flex;text-align: right;font-family: 'Amiri', 'serif';" >
+			                <div style="line-height:50px;margin-left: auto;display: block;">
+			                		مجموعة سنابل المشعان
+			                </div>
+			                <div style="line-height:50px;margin-left: auto;display: block;">
+			                		السعودية-حائل - النقل الجماعي
+			                </div>
+			                <div style="line-height:50px;margin-left: auto;display: block;">
+			                		س.ت:3353001291 ت:065310101
+			                </div>	
+			            </td>
+			        </tr>
+		        </table>
+		        <br/>
+		        <table width="100%">
+		        	<tr style="line-height:50px;font-family: 'Amiri', 'serif';">
+		        		<td width="50%">
+		        			<div class="row" style="margin-left:3px;">
+		        				<span style="font-size:12px;font-weight: bold;display: flex;text-align: right;color:#3b5a90;" t-esc="start_date"/>&#032;:من
+		        				&#032;&#032;
+		        				<span style="font-size:12px;font-weight: bold;display: flex;text-align: right;color:#3b5a90;" t-esc="end_date"/>&#032;:إلى
+		        			</div>
+		        		</td>
+		        		<td width="45%">
+		        			<div class="text-right" style="color:#3b5a90;font-size:14px;font-weight: bold;text-align: right;">
+		        				المشتريات الخاضعة للنسبة الاساسية
+		        			</div>
+		        		</td>
+		        		<td width="5%" style="color:#3b5a90;font-size:14px;font-weight: bold;text-align: right;">
+		        			<div class="text-right">
+                               النوع
+		        			</div>
+		        		</td>
+		        	</tr>
+		        </table>
+
+		        <table width="100%">
+		        	<tr style="line-height:30px;font-weight:bold;font-size:14px;font-family: 'Amiri', 'serif';color:#3b5a90;">
+		        		<td>
+		        			المبلغ بعد الضريبة
+		        		</td>
+		        		<td>
+		        			الضريبة
+		        		</td>
+		        		<td>
+		        			المبلغ قبل الضريبة
+		        		</td>
+		        		<td>
+		        			ملف ضريبي
+		        		</td>
+		        		<td>
+		        			المورد / العميل
+		        		</td>
+		        		<td>
+		        			رقم الفاتورة
+		        		</td>
+		        		<td>
+		        			الشرح الخاص
+		        		</td>
+		        		<td>
+		        			القيد
+		        		</td>
+		        		<td>
+		        			تاريخ القيد
+		        		</td>
+		        		<td>
+		        			م
+		        		</td>
+		        	</tr>
+		        	<t t-set="sequence" t-value="1"/>
+		        	<t t-foreach="docs" t-as="doc">
+		        		<tr style="line-height:25px;font-weight:bold;font-size:10px;font-family: 'Amiri', 'serif';">
+		        			<td>
+			        			<span t-esc="doc['line'].price_subtotal" />
+			        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].l10n_gcc_invoice_tax_amount" />
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].price_total" />
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].partner_id.vat"/>
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].partner_id.name"/>
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].move_id.name"/>
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].name"/>
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].invoice_no"/>
+		        		</td>
+		        		<td>
+		        			<span t-esc="doc['line'].date"/>
+		        		</td>
+		        		<td>
+		        			<span t-esc="sequence"/>
+		        		</td>
+		        		<t t-set="sequence" t-value="sequence+1"/>
+		        		</tr>
+		        	</t>
+		        </table>
+		            
+		                
+		     </div>
+		            	      
+	    </template>
+
+		<template id="report_tax_return_report">
+            <t t-call="web.html_container">
+            	<t t-call="tax_return_report.tax_report_layout">
+            	</t>
+            </t>
+            </template>
+    </data>
+</odoo>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="my_account" name="HR Self Service">
+        <t t-call="portal.portal_layout">
+            <div id="wrap " class='oe_hr_self_service'>
+                <div class="oe_structure"/>
+                <div class="container">
+
+                    <div class=" p-2">
+                        <div class='row shadow card-border'>
+                            <div class='row col-md-6 p-3'>
+                                <div class="col-md-6   o_colored_level">
+                                    <t t-if="partner.image_1920">
+                                        <img t-att-src="image_data_uri(partner.image_1920)" class=" rounded-circle img img-fluid mx-auto" alt="" loading="lazy" data-mimetype="image/jpeg"/>
+                                    </t>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <h3 t-esc='employee.name'></h3>
+                                    <p t-esc='employee.job_title'></p>
+                                    <p t-esc='employee.work_phone'></p>
+                                </div>
+                            </div>
+
+
+                            <div class='row col-md-6 p-3 '>
+                                <div class="col-md-6 p-3 border-left ">
+                                    <div class='row'>
+                                        <div class="col-md-3">
+                                            <img src='/hr_self_service/static/src/img/gender.png' class='icon-width'/>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p t-esc='employee.gender'></p>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class="col-md-3">
+                                            <img src='/hr_self_service/static/src/img/birth.png' class='icon-width'/>
+                                        </div>
+                                        <div class="col-md-9 mt-3">
+                                            <p t-esc='employee.birthday'></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-3">
+                                <p class='basic-color-text'>Joined: <span t-esc='employee.joining_date' class='text-black'/>
+                                </p>
+                                <p class='basic-color-text mt-4'>Nationality: <span t-esc='employee.country_id.name' class='text-black'/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class='col-md-3  p-4'>
+                        <a href='/my/time_off'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/time off.png' class='icon-width-2 d-inline'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Time Off</h5>
+                                        <span t-esc='time_off' class='ml-2'></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class=' col-md-6  p-4 '>
+                        <a href='/my/leave_allocation'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/leaves.png' class='icon-width-2'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Leave Allocation Requests</h5>
+                                        <span t-esc='len(leave_allocation)' class='ml-2'></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" p-4 col-md-3">
+                        <a href='#' class="check_in_out">
+                            <div class="check_in_out" t-attf-class="p-3 border-check shadow-lg #{'check-in-background' if employee.attendance_state == 'checked_in' else 'check-out-background'}">
+                                <img src='/hr_self_service/static/src/img/check out white.png' class='icon-width-checkout'/>
+                                <p class='ml-3 text-center text-white d-inline' t-if='employee.attendance_state == "checked_in"'>Check Out</p>
+                                <p class='ml-3 text-center text-white d-inline' t-if='employee.attendance_state == "checked_out"'>Check In</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class=' col-md-3  p-4 '>
+                        <a href='/my/projects'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/projects.png' class='icon-width-2'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Projects</h5>
+                                        <span t-esc='len(projects)' class='ml-2'></span>
+                                    </span>
+                                </div>
+                                <!-- <div class="col-md-6">
+                            <h5>Projects</h5>
+                            <p t-esc='len(projects)'></p>
+                        </div> -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class='col-md-3  p-4 '>
+                        <a href='/my/tasks'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/tasks.png' class='icon-width-3'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Tasks</h5>
+                                        <span t-esc='len(tasks)' class='ml-2'></span>
+                                    </span>
+                                </div>
+                                <!-- <div class="col-md-6">
+                            <h5>Tasks</h5>
+                            <p t-esc='len(tasks)' class='text-center'></p>
+                        </div> -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class=' col-md-3  p-4 '>
+                        <a href='/my/contracts'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/contracts.png' class='icon-width-3'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Contracts</h5>
+                                        <span t-esc='len(employee.contract_ids)' class='ml-2'></span>
+                                    </span>
+                                </div>
+                                <!-- <div class="col-md-6">
+                            <h5>Contracts</h5>
+                            <p t-esc='len(employee.contract_ids)'></p>
+                        </div> -->
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--                    <div class=' col-md-3  p-4 '>-->
+                    <!--                        <a href='/my/appraisals'>-->
+                    <!--                            <div class='shadow card-border row p-3'>-->
+                    <!--                                <div class="">-->
+                    <!--                                <img src='/hr_self_service/static/src/img/appraisal.png' class='icon-width-2'/>-->
+                    <!--                                <span class='ml-5'>-->
+                    <!--                                    <h5 class='d-inline'>Appraisals</h5>-->
+                    <!--                                    <span t-esc='len(appraisal)' class='ml-2'></span>-->
+                    <!--                                </span>-->
+                    <!--                            </div>-->
+                    <!--                            &lt;!&ndash; <div class="col-md-6">-->
+                    <!--                                <h5>Appraisals</h5>-->
+                    <!--                                <p t-esc='len(appraisal)'></p>-->
+                    <!--                            </div> &ndash;&gt;-->
+                    <!--                        </div>-->
+                    <!--                    </a>-->
+                    <!--                        </div>                  -->
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class=' col-md-3  p-4 '>
+                        <a href='/my/expenses'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/expenses.png' class='icon-width-2'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Expenses</h5>
+                                        <span t-esc='len(expenses)' class='ml-2'></span>
+                                    </span>
+                                </div>
+                                <!-- <div class="col-md-6">
+                            <h5>Expenses</h5>
+                            <p t-esc='len(expenses)'></p>
+                        </div> -->
+                            </div>
+                        </a>
+                    </div>
+                    <div class=' col-md-3  p-4 '>
+                        <a href='/my/payslips'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/payslips.png' class='icon-width-2'/>
+                                    <span class='ml-5'>
+                                        <h5 class='d-inline'>Payslips</h5>
+                                        <span t-esc='len(payslips)' class='ml-2'></span>
+                                    </span>
+                                </div>
+                                <!-- <div class="col-md-6">
+                            <h5>Payslips</h5>
+                            <p t-esc='len(payslips)'></p>
+                        </div> -->
+                            </div>
+                        </a>
+                    </div>
+
+<!--                    <div class=' col-md-3  p-4 '>-->
+<!--                        <a href='/my/loans'>-->
+<!--                            <div class='shadow card-border row p-3'>-->
+<!--                                <div class="">-->
+<!--                                    <img src='/hr_self_service/static/src/img/loans.png' class='icon-width-2'/>-->
+<!--                                    <span class='ml-5'>-->
+<!--                                        <h5 class='d-inline'>Loans</h5>-->
+<!--                                        <span t-esc='len(loans)' class='ml-2'></span>-->
+<!--                                    </span>-->
+<!--                                </div>-->
+                                <!-- <div class="col-md-6">
+                                <h5>Loans</h5>
+                                <p t-esc='len(loans)'></p>
+                            </div> -->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+
+                    <div class=' col-md-3  p-4 '>
+                        <a href='/my/advanced_salary'>
+                            <div class='shadow card-border row p-3'>
+                                <div class="">
+                                    <img src='/hr_self_service/static/src/img/advanced salary.png' class='icon-width-4'/>
+                                    <span class='ml-3'>
+                                        <h5 class='d-inline'>Advanced Salary</h5>
+                                        <span t-esc='len(advanced_salary)' class='ml-1'></span>
+                                    </span>
+                                </div>
+                                <!-- <div class="col-md-8">
+                                <p>Advanced Salary</p>
+                                <p t-esc='advanced_salary_amount'></p>
+                            </div> -->
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class=' col-md-6  p-4'>
+                        <div class='shadow card-border row p-3'>
+                            <div class="">
+                                <h5 class='text-center'>Announcements</h5>
+                                <t t-foreach='announcement_ids' t-as='Announcment'>
+                                    <p t-esc='Announcment.announcement_reason'></p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

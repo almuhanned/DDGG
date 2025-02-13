@@ -1,0 +1,18 @@
+th {
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+td {
+    text-align: center;
+  }  
+
+
+h3 {
+  margin-top: 5%;
+}  
+
+
+tbody:nth-child(even) {background-color: #f2f2f2;}

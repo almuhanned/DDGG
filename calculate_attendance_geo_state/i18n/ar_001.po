@@ -1,0 +1,443 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* calculate_attendance_geo_state
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-21 06:53+0000\n"
+"PO-Revision-Date: 2021-03-21 06:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.hr_attendance_view_form
+msgid ""
+"<br/>\n"
+"                        Geofence State:"
+msgstr ""
+"<br/>\n"
+"                        حالة Geofence:"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.hr_attendance_view_form
+msgid ""
+"<br/>\n"
+"                        Longitude:"
+msgstr ""
+"<br/>\n"
+"                        خط الطول:"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.hr_attendance_view_form
+msgid ""
+"<strong>Check-in Location</strong>\n"
+"                        <br/>\n"
+"                        Latitude:"
+msgstr ""
+"<strong>موقع الدخول</strong>\n"
+"                        <br/>\n"
+"                        خط العرض:"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.hr_attendance_view_form
+msgid ""
+"<strong>Check-out Location</strong>\n"
+"                        <br/>\n"
+"                        Latitude:"
+msgstr ""
+"<strong>موقع الخروج</strong>\n"
+"                        <br/>\n"
+"                        خط العرض:"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_needaction
+msgid "Action Needed"
+msgstr "الاجراءات المطلوبة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__shape_area
+msgid "Area"
+msgstr "المنطقة"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_kanban
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_map
+msgid "Area:"
+msgstr "المنطقة:"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model,name:calculate_attendance_geo_state.model_hr_attendance
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model,name:calculate_attendance_geo_state.model_hr_attendance_area
+msgid "Attendance Area"
+msgstr "منطقة الحضور"
+
+#. module: calculate_attendance_geo_state
+#: code:addons/calculate_attendance_geo_state/models/hr_attendance.py:0
+#, python-format
+msgid "Attendance Geofence must be Only 1"
+msgstr "يجب أن يكون الحضور Geofence 1 فقط"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__center_latitude
+msgid "Center Latitude"
+msgstr "مركز خط العرض"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__center_longitude
+msgid "Center Longitude"
+msgstr "مركز خط الطول"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__check_in_lat
+msgid "Check-in Latitude"
+msgstr "دخول خط العرض"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__check_in_lng
+msgid "Check-in Longitude"
+msgstr "دخول خط الطول"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__check_in_geo_state
+msgid "Check-in State"
+msgstr "دخول الولاية"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__check_out_lat
+msgid "Check-out Latitude"
+msgstr "خروج من خط العرض"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__check_out_lng
+msgid "Check-out Longitude"
+msgstr "خروج من خط الطول"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__check_out_geo_state
+msgid "Check-out State"
+msgstr "خروج من الولاية"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__create_date
+msgid "Created on"
+msgstr "انشئ في"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__current_user
+msgid "Current User"
+msgstr "المستخدم الحالي"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__department_ids
+msgid "Departments"
+msgstr "الأقسام"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__shape_description
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__display_name
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__display_name
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_employee__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields.selection,name:calculate_attendance_geo_state.selection__hr_attendance_area__type_notification__email
+msgid "Email"
+msgstr "البريد الالكتروني"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model,name:calculate_attendance_geo_state.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__employee_ids
+msgid "Employees"
+msgstr "الموظفين"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون(القنوات)"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون(الشركاء)"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__geofence_id
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_form
+msgid "Geofence Area"
+msgstr "منطقة الحضور"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_tree
+msgid "Geofence Areas"
+msgstr "مناطق الحضور"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.actions.act_window,name:calculate_attendance_geo_state.action_hr_attendance_area
+#: model:ir.ui.menu,name:calculate_attendance_geo_state.menu_hr_attendance_area1
+msgid "Geofence Attendance Area"
+msgstr "منطقة الحضور geofence"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance__id
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__id
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_employee__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_needaction
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_has_error
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields.selection,name:calculate_attendance_geo_state.selection__hr_attendance__check_in_geo_state__in
+#: model:ir.model.fields.selection,name:calculate_attendance_geo_state.selection__hr_attendance__check_out_geo_state__in
+msgid "In"
+msgstr "داخل"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_is_follower
+msgid "Is Follower"
+msgstr "هو متابع"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance____last_update
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area____last_update
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_employee____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__write_date
+msgid "Last Updated on"
+msgstr "اخر تحديث في"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__shape_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__NE_latitude
+msgid "NorthEast Latitude"
+msgstr "خط العرض الشمالي الشرقي"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__NE_longitude
+msgid "NorthEast Longitude"
+msgstr "خط الطول الشمالي الشرقي"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الاجراءات"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اجراء"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ التسليم"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields.selection,name:calculate_attendance_geo_state.selection__hr_attendance__check_in_geo_state__out
+#: model:ir.model.fields.selection,name:calculate_attendance_geo_state.selection__hr_attendance__check_out_geo_state__out
+msgid "Out"
+msgstr "خروج"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__shape_paths
+msgid "Paths"
+msgstr "الطرق"
+
+#. module: calculate_attendance_geo_state
+#: code:addons/calculate_attendance_geo_state/models/hr_employee.py:0
+#: code:addons/calculate_attendance_geo_state/models/hr_employee.py:0
+#, python-format
+msgid "Please configure outgoing server."
+msgstr "يرجى تهيئة خادم الصادر."
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__poly_lat
+msgid "Polygon Latitude"
+msgstr "خط عرض مضلع"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__poly_lng
+msgid "Polygon Longitude"
+msgstr "خط طول مضلع"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__shape_radius
+msgid "Radius"
+msgstr "نصف القطر"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_kanban
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_map
+msgid "Radius:"
+msgstr "نصف القطر:"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields.selection,name:calculate_attendance_geo_state.selection__hr_attendance_area__type_notification__sms
+msgid "SMS"
+msgstr "رسائل قصيرة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__attendance_ok
+msgid "Selected on Attendance"
+msgstr "تم اختيار الحضور"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__notify_user
+msgid "Send Notification"
+msgstr "ارسال اشعار"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_map
+msgid "Shape"
+msgstr "شكل"
+
+#. module: calculate_attendance_geo_state
+#: model_terms:ir.ui.view,arch_db:calculate_attendance_geo_state.view_hr_attendance_area_form
+msgid "Shape Name"
+msgstr "اسم الشكل"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__SW_latitude
+msgid "SouthWest Latitude"
+msgstr "خط العرض الجنوبي الغربي"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__SW_longitude
+msgid "SouthWest Longitude"
+msgstr "خط الطول الجنوبي الغربي"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__shape_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__type_notification
+msgid "Type of Notification"
+msgstr "نوع الاشعار"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,field_description:calculate_attendance_geo_state.field_hr_attendance_area__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: calculate_attendance_geo_state
+#: model:ir.model.fields,help:calculate_attendance_geo_state.field_hr_attendance_area__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"
+
+#. module: calculate_attendance_geo_state
+#: code:addons/calculate_attendance_geo_state/models/hr_employee.py:0
+#, python-format
+msgid ""
+"You are not allowed to attendance, you are out of departments geofence."
+msgstr "غير مسموح لك بالحضور ، أنت خارج الدوائر الجغرافية."
+
+#. module: calculate_attendance_geo_state
+#: code:addons/calculate_attendance_geo_state/models/hr_employee.py:0
+#: code:addons/calculate_attendance_geo_state/models/hr_employee.py:0
+#, python-format
+msgid "You are out Geofence Area."
+msgstr "انت خارج منطقة الحضور."

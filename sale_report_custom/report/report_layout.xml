@@ -1,0 +1,233 @@
+<odoo>
+    <data>
+        <template id="external_layout_standard_sale">
+            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img t-att-src="'data:image/*;base64,%s' % to_text(company.header)"
+                         t-att-width="company.header_width" t-att-height="company.header_height"/>
+                    </div>
+                    <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                </div>
+                <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                    <div class="col-12">
+                        <div class="text-center" style="font-family:arabtype;font-size:60px;color:#050864;text-shadow: 2px 0 #888888;letter-spacing:2px;font-weight:bold;">
+                            عرض سعر<br/>
+                        </div>
+                        <div class="text-center" style="font-weight: 900;font-size:25px;font-family:palatino;color:#050864;font-family:Calibri;">
+                            QUOTATION<br/>
+                        </div>
+                        <center>
+                            <table width="30%">
+                                <tr>
+                                    <td class="text-center" style="font-weight: 900;font-size:25px;font-family:palatino;color:#050864;border: 3px solid black;width:30%:">#<span t-esc="o.name"/></td>
+                                </tr>
+                            </table>
+                        </center>
+                        <br/>
+                        <table style="font-size:14px;font-weight: 900;color:#050864;text-align:center;" width="100%">
+                            <tr class="text-center" style="font-family:Calibri;">
+                                <td style="font-weight: 900;font-size:30px;border: 3px solid black;" colspan="2">
+                                    FROM
+                                </td>
+                                <td style="font-weight: 900;font-size:30px;border: 3px solid black;" colspan="2">
+                                    TO
+                                </td>
+                            </tr>
+                            <tr style="font-size:14px;">
+                                <td style="font-weight: 900;border: 3px solid black;font-family:Calibri;text-align:left;" width="15%">
+                                    DG 
+                                </td>
+                                <td style="font-weight: 900;border: 3px solid black;font-family:Calibri;text-align:center;" width="40%">
+                                    <span t-esc="o.company_id.name"/>
+                                </td>
+                                <td 
+                                    style="border : 3px  solid black;text-align:left;" width="15%">
+                                    <strong>Customer Name</strong>
+                                </td>
+                                <td style="border : 3px  solid black;text-align:center;" width="40%">
+                                    <t t-if="o.partner_id.lang == 'ar_001'">
+                                        <strong>
+                                            <strong><span style="font-family:arabtype;font-size:22px;" t-esc="o.partner_id.name"/></strong>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong><span style="font-family:Calibri;" t-esc="o.partner_id.name"/></strong>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="font-size:14px;text-align:center;">
+                                <td  style="border : 3px  solid black;font-family:Calibri;text-align:left;">
+                                    <strong> Registered Adrerss </strong>
+                                    </td>
+                                <td  style="border : 3px  solid black;font-family:Calibri;">
+                                    <span t-esc="o.company_id.partner_id.street"/>
+                                </td>
+                                <td style="border : 3px  solid black;font-family:Calibri;text-align:left;">
+                                    <strong>Registered Adrerss</strong>
+                                </td>
+                                <td style="border : 3px  solid black;font-family:Calibri;">
+                                    <t t-if="o.partner_id.lang == 'ar_001'">
+                                        <strong>
+                                            <strong><span style="font-family:arabtype;font-size:22px;" t-esc="o.partner_id.street"/></strong>
+                                        </strong>
+                                    </t>
+                                    <t t-else="">
+                                        <strong><span style="font-family:Calibri;" t-esc="o.partner_id.street"/></strong>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="font-size:14px;font-family:Calibri;">
+                                <td style="border : 3px  solid black;">
+                                    <strong><div style="text-align:left;"> Branch</div></strong>
+                                </td>
+                                <td  style="border : 3px  solid black;text-align:center;">
+                                    <div style="min-height: 20px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.branch_id.name"/></div>
+                                </td>
+                                <td style="border : 3px  solid black;text-align:left;">
+                                    <div style="text-align:left;"><strong>Gust.VAT.No</strong></div>
+                                </td>
+                                <td style="border : 3px  solid black;">
+                                    <div style="min-height: 20px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.partner_id.vat"/></div>
+                                </td>
+                            </tr>
+                            <tr style="font-size:14px;text-align:center;font-family:Calibri;">
+                                <td style="border : 3px  solid black;">
+                                    <div style="text-align:left;"><strong>VAT No.</strong></div>
+                                </td>
+                                <td style="border : 3px  solid black;">
+                                    <div style="min-height: 20px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.company_id.vat"/></div>
+                                </td>
+                                <td style="border : 3px  solid black;">
+                                    <div style="text-align:left;"><strong>Attention:</strong></div>
+                                </td>
+                                <td style="border : 3px  solid black;">
+                                    <div style="min-height: 20px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.attention"/></div>
+                                </td>
+                            </tr>
+                            <tr style="font-size:14px;text-align:center;font-family:Calibri;">
+                                    <td style="border : 3px  solid black;">
+                                        <div style="text-align:left;"><strong>Prepared By:</strong></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="min-height: 25px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.create_user.name"/></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="text-align:left;"><strong>Telephone</strong></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="min-height: 25px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.partner_id.phone"/></div>
+                                    </td>
+                            </tr>
+                            <tr style="font-size:14px;text-align:center;font-family:Calibri;">
+                                    <td style="border : 3px  solid black;">
+                                        <div style="text-align:left;"><strong>Date</strong></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="min-height: 25px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.date_order.strftime('%d-%m-%Y')"/></div>
+                                    </td>
+                                    <td  style="border : 3px  solid black;">
+                                        <div style="text-align:left;"><strong>Delivery Date</strong></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                            <div style="min-height: 25px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><t t-if="o.picking_ids.filtered(lambda x:x.state != 'cancel')">
+                                                <span t-esc="o.picking_ids.filtered(lambda x:x.state != 'cancel')[0].scheduled_date.strftime('%d-%m-%Y')"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="o.date_order.strftime('%d-%m-%Y')"/>
+                                            </t>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="font-size:14px;text-align:center;font-family:Calibri;">
+                                    <td style="border : 3px  solid black;">
+                                        <div style="text-align:left;"> <strong>Sales Person ID</strong></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="min-height: 25px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><span t-esc="o.salesperson.name"/></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="text-align:left;"><strong>Delivery Location</strong></div>
+                                    </td>
+                                    <td style="border : 3px  solid black;">
+                                        <div style="min-height: 25px;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-moz-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;"><t t-if="o.picking_ids.filtered(lambda x:x.state != 'cancel')">
+                                            <span t-esc="o.picking_ids.filtered(lambda x:x.state != 'cancel')[0].location_id.name"/>
+                                        </t></div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                    </div>
+                </div>
+            
+            </div>
+
+            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout {{  'o_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="pt-5">
+                    <!-- This div ensures that the address is not cropped by the header. -->
+                    <t t-call="web.address_layout"/>
+                </div>
+                <t t-out="0"/>
+            </div>
+
+            <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+                        <div t-field="company.report_footer"/>
+                    </ul>
+
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template id="external_layout_sale">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-if="company.external_report_layout_id" t-call="sale_report_custom.external_layout_standard_sale">
+            <t t-out="0"/></t>
+            <t t-else="else" t-call="sale_report_custom.external_layout_standard_sale">
+            <t t-out="0"/></t>
+        </template>
+
+        <record id="paperformat_sale_cu" model="report.paperformat">
+            <field name="name">A4 Label Sheet</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">140</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="dpi">96</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">140</field>
+        </record>
+
+        <record id="sale.action_report_saleorder" model="ir.actions.report">
+            <field name="name">Quotation / Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">sale.report_saleorder</field>
+            <field name="report_file">sale.report_saleorder</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="paperformat_id" ref="paperformat_sale_cu"/>
+            <field name="binding_type">report</field>
+        </record>
+        
+    </data>
+</odoo>

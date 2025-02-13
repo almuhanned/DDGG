@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+     <record id="view_sale_salesperson_order_form_inherit" model="ir.ui.view">
+ 	<field name="name">sale.order.form.inherit</field>
+ 	<field name="model">sale.order</field>
+ 	<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+            <field name="user_id" position="replace">
+                <field name="salesperson" required="1" widget="many2one_avatar_employee" options="{'no_create': True}"/>
+            </field>
+        </field>
+     </record>
+
+       <record id="sale_custom_view_search_inherit" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+            <xpath expr="//filter[@name='salesperson']" position="replace">
+                <filter string="Salesperson" name="salesperson" domain="[]" context="{'group_by':'salesperson'}"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="salesperson"/>
+            </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+       </record>
+
+      <record id="view_quotation_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="salesperson"/>
+                </xpath>
+                 <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+      <record id="view_move_line_form_inherit_invoice_type" model="ir.ui.view">
+        	<field name="name">view.move.line.form.inherit.invoice.type</field>
+        	<field name="model">account.move</field>
+        	<field name="inherit_id" ref="account.view_move_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_reference']" position="after">
+                    <field name="invoice_type"/>
+                </xpath>
+			</field>
+        </record>
+
+
+    <record id="view_account_invoice_filter_inherit_invoice_type" model="ir.ui.view">
+			<field name="name">.view.account.invoice.filter.invoice.type</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_account_invoice_filter"/>
+			<field name="arch" type="xml">
+				<xpath expr="//search/group" position="inside">
+					<filter string="Invoice Type" name="invoice_type" context="{'group_by':'invoice_type'}"/>
+				</xpath>
+
+<!--                  <xpath expr="//group/filter[@name='to_check']" position="after">-->
+<!--                    <filter string="Invoice Type" name="salesperson" context="{'group_by':'salesperson'}"/>-->
+<!--                </xpath>-->
+			</field>
+		</record>
+
+
+
+</odoo>

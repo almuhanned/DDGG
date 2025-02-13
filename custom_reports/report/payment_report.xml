@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<odoo>
+
+        <template id="inherit_report_payment_receipt_document" inherit_id="account.report_payment_receipt_document">
+            <xpath expr="//div/div" position="inside">
+                <div class="row">
+                <div class="col-6" >
+                    Branch: <span t-field="o.branch_id.name"/>
+                </div>
+                </div>
+            </xpath>
+            <xpath expr="//table" position="after">
+                <br/>
+                <br/>
+                <div class="row">
+
+                    <div class="col-5" >
+                        <strong>Auditor Signature </strong>
+                    </div>
+                    <div class="col-1" >
+                        <strong></strong>
+                    </div>
+                    <t  t-if="o.payment_type == 'outbound' or o.payment_type == 'outbound'">
+                    <div class="col-3" >
+                        <strong> Recipient</strong>
+                    </div>
+                    </t>
+                    <div class="col-9" >
+                        <strong>cashier Signature</strong>
+                    </div>
+
+                </div>
+            </xpath>
+        </template>
+
+</odoo>
+
+<!--<span t-if="o.currency_id" t-esc="o.currency_text(o.amount_total, o.currency_id.name, o.partner_id.lang or 'pl_PL')"/>-->

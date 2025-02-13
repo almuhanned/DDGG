@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="ess_left_menu_customize"
+              inherit_id="ess.my_portalside_layout"
+              name="ess_menu_update">
+        <xpath expr="//a[@href='/my/nattendance']" position="replace">
+        </xpath>
+        <xpath expr="//div[@t-if='company_documents']" position="replace">
+        </xpath>
+    </template>
+<!--    <template id="ess_all_announcement"-->
+<!--              inherit_id="ess.all_announcement"-->
+<!--              name="ess_all_announcement_update">-->
+
+<!--        <xpath expr="//td[@t-if='ann['attachment_id']']" position="replace">-->
+<!--            <td t-if="ann['attachment_id']" style="color:green;">-->
+<!--                <t t-foreach="ann['attachment_id']" t-as="attachment">-->
+<!--                    <a t-att-id="'announcement%s' % ann['id']"-->
+<!--                       t-att-href="'/attachment/download?attachment_id=%i' % attachment.id"-->
+<!--                       class="fa fa-download"/>-->
+<!--                </t>-->
+<!--            </td>-->
+<!--        </xpath>-->
+
+<!--    </template>-->
+
+</odoo>

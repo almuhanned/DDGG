@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="print_kartu_stok_view_form" model="ir.ui.view">
+        <field name="name">kartu.stok.wizard.form</field>
+        <field name="model">kartu.stok.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Product Card">
+                <group class="oe_title">
+                    <field name="location_id" domain="[('name','=','Stock'),('active','=', True),('usage','=','internal')]" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                    <br/>
+                    <field name="day_date" widget="radio"/>
+                    <div>
+                    </div>
+                    <div>
+                        <group id="previous_number_days_settings" attrs="{'invisible': [('day_date', '!=', 'day')]}">
+                            <field name="previous_number_days"/>
+                        </group>
+                        <group id="date_from date_to_settings" attrs="{'invisible': [('day_date', '!=', 'date')]}">
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                    </div>
+                </group>
+                <footer>
+                    <button name="action_kartu_stok_pdf_wizard" string="Print PDF" type="object" class="btn-primary"/>
+<!--                    <button name="action_kartu_stok_excel_wizard" string="Print Excel" type="object" class="btn-primary"/>-->
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="print_kartu_stok_product_product_action" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Print Product Card</field>
+        <field name="res_model">kartu.stok.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="print_kartu_stok_view_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="product.model_product_product"/>
+        <field name="binding_type">action</field>
+    </record>
+
+    <record id="print_kartu_stok_product_template_action" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Print Product Card</field>
+        <field name="res_model">kartu.stok.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="print_kartu_stok_view_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_type">action</field>
+    </record>
+
+     <record id="stock_move_line_branch_view_form_inherit" model="ir.ui.view" >
+            <field name="name">stock.move.line.inherit.form</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_form" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="purchase_line_id"/>
+                    <field name="sale_line_id"/>
+                    <field name="contact"/>
+                    <field name="sale_price_unit"/>
+                    <field name="purchase_price_unit"/>
+                </field>
+            </field>
+        </record>
+
+
+
+
+
+    <record id="stock.view_move_line_tree" model="ir.ui.view">
+        <field name="name">stock.move.line.tree.inherit</field>
+        <field name="model">stock.move.line</field>
+<!--        <field name="inherit_id" ref="stock.view_move_line_tree"/>-->
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <tree string="Move Lines" create="0" default_order="date">
+                <field name="date"/>
+                <field name="reference" string="Reference"
+                       invisible="context.get('no_reference', False)"  optional="hide"/>
+                <field name="product_id"/>
+                <field name="purchase_line_id"/>
+                <field name="purchase_price_unit"/>
+                <field name="sale_line_id"/>
+                <field name="sale_price_unit"/>
+                <field name="contact" optional="hide"/>
+                <field name="lot_id" groups="stock.group_production_lot"  optional="hide"/>
+                <field name="location_id" groups="stock.group_stock_multi_locations" />
+                <field name="location_dest_id" groups="stock.group_stock_multi_locations" />
+                <field name="qty_done" string="Quantity Done"/>
+                <field name="product_uom_id" options="{'no_open': True, 'no_create': True}" string="Unit of Measure" groups="uom.group_uom"  optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" force_save="1"   optional="hide"/>
+                <field name="state" widget='badge' decoration-success="state == 'done'" decoration-info="state not in ('done', 'cancel')"  optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+<!--      <record id="stock_move_line_action_inherit" model="ir.actions.act_window">-->
+<!--            <field name="name">Product Moves</field>-->
+<!--            <field name="res_model">stock.move.line</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="view_mode">tree,kanban,pivot,form</field>-->
+<!--            <field name="view_id" ref="view_move_line_tree_inherit_tree"/>-->
+<!--            <field name="context">{'search_default_filter_last_12_months': 1, 'search_default_done': 1, 'search_default_groupby_product_id': 1, 'create': 0}</field>-->
+<!--            <field name="help" type="html">-->
+<!--                <p class="o_view_nocontent_empty_folder">-->
+<!--                    There's no product move yet-->
+<!--                </p><p>-->
+<!--                    This menu gives you the full traceability of inventory operations on a specific product.-->
+<!--                    You can filter on the product to see all the past movements for the product.-->
+<!--                </p>-->
+<!--            </field>-->
+<!--    </record>-->
+
+
+</odoo>

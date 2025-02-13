@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+    <!-- Contract View -->
+    <record id="hr_contract_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='resource_calendar_id']" position="after">
+                <field name="schedule_pay"/>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="after">
+<!--                <field name="employee_no"/>-->
+                <field name="struct_id" required="1"/>
+            </xpath>
+
+             <group name="salary" position="inside">
+                    <field name="l10n_sa_company_country_code" invisible="1"/>
+                    <label for="l10n_sa_housing_allowance" attrs="{'invisible': [('l10n_sa_company_country_code', '!=', 'SA')]}" string="Housing Allowance"/>
+                    <div class="o_row" name="l10n_sa_housing_allowance" attrs="{'invisible': [('l10n_sa_company_country_code', '!=', 'SA')]}">
+                        <field name="l10n_sa_housing_allowance" nolabel="1"/>
+                        <span>/ month</span>
+                    </div>
+                    <label for="l10n_sa_transportation_allowance" attrs="{'invisible': [('l10n_sa_company_country_code', '!=', 'SA')]}" string="Transportation Allowance"/>
+                    <div class="o_row" name="l10n_sa_transportation_allowance" attrs="{'invisible': [('l10n_sa_company_country_code', '!=', 'SA')]}">
+                        <field name="l10n_sa_transportation_allowance" nolabel="1"/>
+                        <span>/ month</span>
+                    </div>
+                    <label for="l10n_sa_other_allowances" attrs="{'invisible': [('l10n_sa_company_country_code', '!=', 'SA')]}" string="Other Allowances"/>
+                    <div class="o_row" name="l10n_sa_other_allowances" attrs="{'invisible': [('l10n_sa_company_country_code', '!=', 'SA')]}">
+                        <field name="l10n_sa_other_allowances" nolabel="1"/>
+                        <span>/ month</span>
+                    </div>
+                </group>
+
+        </field>
+    </record>
+
+  </data>
+</odoo>

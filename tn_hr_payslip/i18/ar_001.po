@@ -1,0 +1,159 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tn_hr_payslip
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-27 06:42+0000\n"
+"PO-Revision-Date: 2023-02-27 06:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Basic Salary</strong>"
+msgstr "الراتب الاساسي"
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Department</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Employee Code</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Housing Allownce</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>IBAN</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Last date Leave</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>National</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Number Days</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Pay Period</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Period Rejon Date</strong>"
+msgstr "فترة الانضمام"
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Rejon Date</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>Transportation</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.report_payslip_inherit
+msgid "<strong>o.employee_id.employee_code</strong>"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__account_id
+msgid "Account"
+msgstr "الحساب"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__account_end_service_id
+msgid "Account End of Service"
+msgstr "حساب نهاية الخدمة"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__account_holiday_id
+msgid "Account Holiday"
+msgstr "حساب الاجازة"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__account_move_id
+msgid "Account Move"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__duration_days
+msgid "Duration Days"
+msgstr "عدد الابام"
+
+#. module: tn_hr_payslip
+#: model:ir.model,name:tn_hr_payslip.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: tn_hr_payslip
+#: model:ir.model,name:tn_hr_payslip.model_end_of_service_award
+msgid "End of Service Award"
+msgstr "مكافأه نهايه الخدمه"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__journal_id
+msgid "Journal"
+msgstr "دفتر البومية"
+
+#. module: tn_hr_payslip
+#: model_terms:ir.ui.view,arch_db:tn_hr_payslip.inherit_view_end_of_service_award_form
+msgid "Journal Entery"
+msgstr "قيود اليومية"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__other_amount
+msgid "Other Amount"
+msgstr "مبالغ اخرى"
+
+#. module: tn_hr_payslip
+#: model:ir.model,name:tn_hr_payslip.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال المرتب"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_hr_employee__rejoin_period
+msgid "Rejoin Period"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_hr_payslip__time_leave_id
+msgid "Time Off"
+msgstr ""
+
+#. module: tn_hr_payslip
+#: code:addons/tn_hr_payslip/models/end_of_service_award.py:0
+#, python-format
+msgid ""
+"You Can Not create journal enteries and remaining amount or holiday days "
+"equal 0.0"
+msgstr "لايمكنك انشاء قيد يومية والمبلغ المتبقي او مبلغ الاجازات يساوي صفر"
+
+#. module: tn_hr_payslip
+#: model:ir.model.fields,field_description:tn_hr_payslip.field_end_of_service_award__account_end_service_id
+msgid "Salary"
+msgstr "الراتب"

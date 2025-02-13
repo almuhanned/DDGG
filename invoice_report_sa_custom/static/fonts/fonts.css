@@ -1,0 +1,21 @@
+@font-face {
+            font-family: 'frutiger';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/invoice_report_sa_custom/static/fonts/frutiger.ttf) format('truetype');
+        }
+        
+
+@font-face {
+            font-family: 'arabtype';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/invoice_report_sa_custom/static/fonts/arabtype.ttf) format('truetype');
+        }
+        
+@font-face {
+            font-family: 'Calibri Bold Italic';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/invoice_report_sa_custom/static/fonts/Calibri Bold Italic.ttf) format('truetype');
+        }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+      <record id="view_move_form_inherit_salesperson_inherit" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+		<field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_info_group']/field[@name='invoice_user_id']" position="after">
+                <field name="salesperson"  widget="many2one_avatar_employee" options="{'no_create': True}"/>
+            </xpath>
+            </field>
+     </record>
+
+     <record id="account_move_group_by_inherit_view" model="ir.ui.view">
+            <field name="name">account.move.group.by</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_user_id']" position="replace">
+                    <field name="salesperson"/>
+                </xpath>
+
+                <xpath expr="//group/filter[@name='salesperson']" position="replace">
+                    <filter string="Salesperson" name="salesperson" context="{'group_by':'salesperson'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+      <record id="view_out_invoice_tree_inherit_salesperson" model="ir.ui.view">
+        <field name="name">account.move.tree.invoice</field>
+        <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='invoice_user_id']" position="replace">
+                <field name="salesperson" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+</odoo>

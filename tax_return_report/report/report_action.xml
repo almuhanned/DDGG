@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <record id="tax_return_report_action" model="ir.actions.report">
+            <field name="name">Tax Return Report Action</field>
+            <field name="model">tax.return.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">tax_return_report.report_tax_return_report</field>
+            <field name="report_file">tax_return_report.report_tax_return_report</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

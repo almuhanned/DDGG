@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_zid_integration_manager,zid.integration.group.manager,model_zid_integration,zid_connector.group_zid_integration_manager,1,1,1,1
+access_zid_integration_user,zid.integration.user,model_zid_integration,zid_connector.group_zid_integration_user,1,0,0,0
+access_zid_payment_method_user,zid.payment.method.user,model_zid_payment_method,zid_connector.group_zid_integration_user,1,0,0,0
+access_zid_payment_method_manager,zid.payment.method.manager,model_zid_payment_method,zid_connector.group_zid_integration_manager,1,1,1,0

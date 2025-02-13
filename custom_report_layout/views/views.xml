@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--    <record id="view_order_custom_form_inherit" model="ir.ui.view">-->
+<!--        <field name="name">sale.order.form.sale.custom</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--        <field name="sale_order_template_id" position="before">-->
+<!--            <field name="attention"/>-->
+<!--            <field name="location"/>-->
+<!--        </field>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+        <!-- Inherited res.company form view -->
+        <record id="view_res_company_layout_inherit" model="ir.ui.view">
+            <field name="name">res.company.form.layout.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook" position="inside">
+                        <page string="Header &amp; Footer Layout">
+                            <div class="o_row">
+                                <field name="header" widget="image" class="float-left oe_avatar"
+                                       options="{'size': [300, 80]}" required="1"/>
+                                <field name="header_width" required="1"/>
+                                <span>,</span>
+                                <field name="header_height" required="1"/>
+                            </div>
+                            <div class="o_row">
+                                <field name="footer" widget="image" class="float-left oe_avatar"
+                                       options="{'size': [300, 80]}" required="1"/>
+                                <field name="footer_width" required="1"/>
+                                <span>,</span>
+                                <field name="footer_height" required="1"/>
+                            </div>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

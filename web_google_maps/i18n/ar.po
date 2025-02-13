@@ -1,0 +1,634 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_google_maps
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-24 10:58+0000\n"
+"PO-Revision-Date: 2020-03-04 00:03+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: web_google_maps
+#. openerp-web
+#: code:addons/web_google_maps/static/src/js/widgets/gplaces_autocomplete
+#: 2.js:0
+#: code:addons/web_google_maps/static/src/js/widgets/gplaces_autocomplete.js:0
+#, python-format
+msgid "<ul><li></li></ul>"
+msgstr ""
+
+#. module: web_google_maps
+#: model:ir.model,name:web_google_maps.model_ir_actions_act_window_view
+msgid "Action Window View"
+msgstr "عرض نافذة الإجراء"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__af
+msgid "Afrikaans"
+msgstr "الأفريكانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__sq
+msgid "Albanian"
+msgstr "الألبانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__am
+msgid "Amharic"
+msgstr "الأمهرية"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Api key"
+msgstr "مفتاح API"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ar
+msgid "Arabic"
+msgstr "العربيه"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_theme__aubergine
+msgid "Aubergine"
+msgstr "باذنجان"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__az
+msgid "Azerbaijani"
+msgstr "أذربيجان"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__eu
+msgid "Basque"
+msgstr "الباسكي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__be
+msgid "Belarusian"
+msgstr "البيلاروسية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__bn
+msgid "Bengali"
+msgstr "بنغالى"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__bs
+msgid "Bosnian"
+msgstr "البوسنية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__bg
+msgid "Bulgarian"
+msgstr "البلغارية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__my
+msgid "Burmese"
+msgstr "البورمية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ca
+msgid "Catalan"
+msgstr "الكاتالونية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__zh
+msgid "Chinese"
+msgstr "صينى"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__zh-hk
+msgid "Chinese (Hong Kong)"
+msgstr "الصينية (هونج كونج)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__zh-cn
+msgid "Chinese (Simplified)"
+msgstr "الصينية (المبسطة)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__zh-tw
+msgid "Chinese (Traditional)"
+msgstr "تقاليد صينية)"
+
+#. module: web_google_maps
+#: model:ir.model,name:web_google_maps.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الإعدادات"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__hr
+msgid "Croatian"
+msgstr "الكرواتية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__cs
+msgid "Czech"
+msgstr "تشيكي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__da
+msgid "Danish"
+msgstr "دانماركي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_theme__dark
+msgid "Dark"
+msgstr "داكن"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_theme__default
+msgid "Default"
+msgstr "إفتراضي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__nl
+msgid "Dutch"
+msgstr "هولندي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__en
+msgid "English"
+msgstr "الإنجليزية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__en-au
+msgid "English (Australian)"
+msgstr "الانجليزية (الاسترالية)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__en-gb
+msgid "English (Great Britain)"
+msgstr "الإنجليزية (بريطانيا العظمى)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__et
+msgid "Estonian"
+msgstr "الإستونية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__fa
+msgid "Farsi"
+msgstr "فارسى"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__fil
+msgid "Filipino"
+msgstr "فليبينى"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__fi
+msgid "Finnish"
+msgstr "اللغة الفنلندية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__fr
+msgid "French"
+msgstr "فرنسى"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__fr-ca
+msgid "French (Canada)"
+msgstr "الفرنسية (كندا)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__gl
+msgid "Galician"
+msgstr "الجاليكية"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_res_config_settings__google_maps_geometry
+msgid "Geometry"
+msgstr "علم الهندسة"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid ""
+"Geometry includes utility functions for calculating scalar geometric "
+"values (such as distance and area) on the surface of the earth. \n"
+"                                        Consult the"
+msgstr ""
+"تشمل الهندسة وظائف الأداة المساعدة لحساب القيم الهندسية العددية (مثل "
+"المسافة والمساحة) على سطح الأرض.\n"
+" \n"
+"                                        استشر"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Geometry library documentation"
+msgstr "وثائق مكتبة الهندسة"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ka
+msgid "Georgian"
+msgstr "الجورجية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__de
+msgid "German"
+msgstr "ألمانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_res_config_settings__google_maps_lang_localization
+msgid "Google Maps Language Localization"
+msgstr "توطين لغة خرائط جوجل"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Google Maps Libraries"
+msgstr "مكتبات خرائط جوجل"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_res_config_settings__google_maps_region_localization
+msgid "Google Maps Region Localization"
+msgstr "توطين جوجل خرائط المنطقة"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Google Maps View"
+msgstr "عرض خرائط جوجل"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_res_config_settings__google_maps_view_api_key
+msgid "Google Maps View Api Key"
+msgstr "عرض خرائط جوجل Api Key"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__el
+msgid "Greek"
+msgstr "اليونانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__gu
+msgid "Gujarati"
+msgstr "الغوجاراتية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__iw
+msgid "Hebrew"
+msgstr "اللغة العبرية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__hi
+msgid "Hindi"
+msgstr "هندى"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__hu
+msgid "Hungarian"
+msgstr "الهنغارية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__is
+msgid "Icelandic"
+msgstr "أيسلندي"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid ""
+"If you set the language of the map, it's important to consider setting the "
+"region too. This helps ensure that your application complies with local "
+"laws."
+msgstr ""
+"إذا قمت بتعيين لغة الخريطة ، فمن المهم التفكير في تعيين المنطقة أيضًا. هذا "
+"يساعد على ضمان أن طلبك يتوافق مع القوانين المحلية."
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__id
+msgid "Indonesian"
+msgstr "الأندونيسية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__it
+msgid "Italian"
+msgstr "الإيطالي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ja
+msgid "Japanese"
+msgstr "اليابانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__kn
+msgid "Kannada"
+msgstr "الكنديه"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__kk
+msgid "Kazakh"
+msgstr "الكازاخية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__km
+msgid "Khmer"
+msgstr "الخمير"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ko
+msgid "Korean"
+msgstr "الكورية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ky
+msgid "Kyrgyz"
+msgstr "قيرغيزستان"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Language"
+msgstr "اللغة"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__lo
+msgid "Lao"
+msgstr "لاو"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__lv
+msgid "Latvian"
+msgstr "اللاتفية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__lt
+msgid "Lithuanian"
+msgstr "اللتوانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__mk
+msgid "Macedonian"
+msgstr "المقدونية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ms
+msgid "Malay"
+msgstr "لغة الملايو"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ml
+msgid "Malayalam"
+msgstr "المالايالامية"
+
+#. module: web_google_maps
+#. openerp-web
+#: code:addons/web_google_maps/static/src/js/view/map/map_view 2.js:0
+#: code:addons/web_google_maps/static/src/js/view/map/map_view.js:0
+#: model:ir.model.fields.selection,name:web_google_maps.selection__ir_actions_act_window_view__view_mode__map
+#: model:ir.model.fields.selection,name:web_google_maps.selection__ir_ui_view__type__map
+#: model_terms:ir.ui.view,arch_db:web_google_maps.view_res_partner_map
+#, python-format
+msgid "Map"
+msgstr "خريطة"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_res_config_settings__google_maps_theme
+msgid "Map theme"
+msgstr "خريطة الموضوع"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__mr
+msgid "Marathi"
+msgstr "المهاراتية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__mn
+msgid "Mongolian"
+msgstr "المنغولية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ne
+msgid "Nepali"
+msgstr "النيبالية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_theme__night
+msgid "Night"
+msgstr "ليلي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__no
+msgid "Norwegian"
+msgstr "النرويجية"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_res_config_settings__google_maps_places
+msgid "Places"
+msgstr "أماكن"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid ""
+"Places enables your application to search for places such as "
+"establishments, geographic locations, or prominent points of interest, "
+"within a defined area. \n"
+"                                        Consult the"
+msgstr ""
+"تعمل الأماكن على تمكين التطبيق الخاص بك من البحث عن أماكن مثل المؤسسات أو "
+"المواقع الجغرافية أو نقاط الاهتمام البارزة داخل منطقة محددة.\n"
+"\n"
+"                                        استشر"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Places library documentation"
+msgstr "وثائق مكتبة الأماكن"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__pl
+msgid "Polish"
+msgstr "تلميع"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__pt
+msgid "Portuguese"
+msgstr "البرتغالية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__pt-br
+msgid "Portuguese (Brazil)"
+msgstr "البرتغالية (البرازيل)."
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__pt-pt
+msgid "Portuguese (Portugal)"
+msgstr "البرتغالية (البرتغال)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__pa
+msgid "Punjabi"
+msgstr "البنجابية"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Region"
+msgstr "منطقة"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_theme__retro
+msgid "Retro"
+msgstr "ريترو"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ro
+msgid "Romanian"
+msgstr "روماني"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ru
+msgid "Russian"
+msgstr "الروسية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__sr
+msgid "Serbian"
+msgstr "صربي"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Set API keys and map localization"
+msgstr "تعيين مفاتيح API وتوطين الخريطة"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_theme__silver
+msgid "Silver"
+msgstr "فضي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__si
+msgid "Sinhalese"
+msgstr "السنهالية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__sk
+msgid "Slovak"
+msgstr "السلوفاكية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__sl
+msgid "Slovenian"
+msgstr "سلوفيني"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__es
+msgid "Spanish"
+msgstr "الأسبانية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__es-419
+msgid "Spanish (Latin America)"
+msgstr "الإسبانية (أمريكا اللاتينية)"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__sw
+msgid "Swahili"
+msgstr "السواحلية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__sv
+msgid "Swedish"
+msgstr "اللغة السويدية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ta
+msgid "Tamil"
+msgstr "التاميل"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__te
+msgid "Telugu"
+msgstr "التيلجو"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__th
+msgid "Thai"
+msgstr "التايلاندية"
+
+#. module: web_google_maps
+#. openerp-web
+#: code:addons/web_google_maps/static/src/js/widgets/gplaces_autocomplete
+#: 2.js:0
+#: code:addons/web_google_maps/static/src/js/widgets/gplaces_autocomplete.js:0
+#, python-format
+msgid "The following fields are invalid:"
+msgstr "الحقول التالية غير صالحة:"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Theme"
+msgstr "السمة/القالب"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__tr
+msgid "Turkish"
+msgstr "اللغة التركية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__uk
+msgid "Ukrainian"
+msgstr "الأوكراني"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__ur
+msgid "Urdu"
+msgstr "الأردية"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__uz
+msgid "Uzbek"
+msgstr "الأوزبكي"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__vi
+msgid "Vietnamese"
+msgstr "الفيتنامية"
+
+#. module: web_google_maps
+#: model:ir.model,name:web_google_maps.model_ir_ui_view
+msgid "View"
+msgstr "أداة العرض"
+
+#. module: web_google_maps
+#: model:ir.model.fields,field_description:web_google_maps.field_ir_actions_act_window_view__view_mode
+#: model:ir.model.fields,field_description:web_google_maps.field_ir_ui_view__type
+#: model:ir.model.fields,field_description:web_google_maps.field_website_page__type
+msgid "View Type"
+msgstr "نوع واجهة العرض"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "Visit the"
+msgstr "زيارة"
+
+#. module: web_google_maps
+#: model:ir.model.fields.selection,name:web_google_maps.selection__res_config_settings__google_maps_lang_localization__zu
+msgid "Zulu"
+msgstr "الزولو"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "about Localizing the Map"
+msgstr "حول توطين الخريطة"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.view_res_partner_map
+msgid "at"
+msgstr "في"
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "for more information."
+msgstr "للمزيد من المعلومات."
+
+#. module: web_google_maps
+#: model_terms:ir.ui.view,arch_db:web_google_maps.res_config_settings_view_form
+msgid "page"
+msgstr "صفحة"

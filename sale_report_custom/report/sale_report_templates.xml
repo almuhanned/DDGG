@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+
+        <template id="report_saleorder_document" inherit_id='sale.report_saleorder_document'>
+            <xpath expr="//t[@t-call='web.external_layout']" position='replace'>
+                <t t-call="sale_report_custom.external_layout_sale">
+                    <div class="page">
+                        <t t-set="doc" t-value="doc.with_context(lang='en_US')" />
+                        <table class="table table-sm o_main_table" name="invoice_line_table" style="font-family:Calibri;">
+                            <thead>
+                                <tr style="font-weight: 900;color:#050864;">
+                                    <t t-set="colspan" t-value="6"/>
+                                    <th name="th_no" style="border: 1.5px solid black;width:5%;text-align : center;vertical-align: middle;">
+                                        <span>No</span> 
+                                    </th>
+                                    <th name="th_image" style="border: 1.5px solid black;width:15%;text-align : center;vertical-align: middle;">
+                                        <span>Product Image</span>
+                                    </th>
+                                    <th name="th_name" style="border: 1.5px solid black; width:10%;text-align : center;vertical-align: middle;">
+                                        <span>Item Name</span> 
+                                    </th>
+                                    <th name="th_description" style="border: 1.5px solid black; width:15%;text-align : center;vertical-align: middle;">
+                                        <span>Description</span> 
+                                    </th>
+                                    <th name="th_brand" style="border: 1.5px solid black; width:10%;text-align : center;vertical-align: middle;">
+                                        <span>Brand/Maker</span>  
+                                    </th>
+                                    <th  style="border: 1.5px solid black; width:5%;text-align : center;vertical-align: middle;" name="th_qty">
+                                        <span>Quantity </span> 
+                                    </th>
+                                    <th style="border: 1.5px solid black; width:5%;text-align : center;vertical-align: middle;" name="th_price">
+                                        <span>Unite Price</span> 
+                                    </th>
+                                    <th style="border: 1.5px solid black; width:10%;text-align : center;vertical-align: middle;" name="th_discount">
+                                        <span>Disc%</span> 
+                                    </th>
+                                    <th style="border: 1.5px solid black; width:20%;text-align : center;vertical-align: middle;" name="th_total">
+                                        <span>TOTAL</span> 
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align:center;font-family:Calibri;">
+                                <t t-foreach="doc.order_line" t-as="line">
+
+                                    <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                        <td name="td_no"
+                                            style="border: 1.5px solid black;vertical-align: middle;">
+                                                <span t-esc="line_index+1"/>
+                                        </td> 
+                                        <td name="td_image"
+                                            style="border: 1.5px solid black;vertical-align: middle;">
+<!--                                            <img t-att-src="'data:image/*;base64,%s' % to_text(line.image_small)" style='margin:0px;padding-top:0px;'/>-->
+                                            <img t-if="line.product_id.image_1920" t-attf-src="data:image/*;base64,{{line.product_id.image_1920}}" style="resize:both;width:70%;height:auto"/>
+
+                                        </td> 
+                                        <td name="td_name"
+                                            style="border: 1.5px solid black;vertical-align: middle;">
+                                                <span t-esc="line.product_id.display_name"/>
+                                        </td> 
+                                        <td name="td_description"
+                                            style="border: 1.5px solid black;vertical-align: middle;">
+                                                <span t-esc="line.name"/>
+                                        </td>
+                                        <td name="td_brand"
+                                            style="border: 1.5px solid black;text-align:center;vertical-align: middle;">
+                                                <span t-esc="line.product_id.brand_id.name"/>
+                                        </td> 
+                                        <td name="td_quantity"
+                                            style="border: 1.5px solid black;vertical-align: middle;font-size:14px;">
+                                                <span class="text-nowrap" t-esc="'{:,.2f}'.format(line.product_uom_qty)"/>
+                                        </td>
+                                        <td name="td_price"
+                                            style="border: 1.5px solid black;vertical-align: middle;font-size:14px;">
+                                                <span class="text-nowrap" t-esc="'{:,.2f}'.format(line.price_unit)"/>
+                                        </td>
+                                        
+                                        <td name="td_discount"
+                                            style="border: 1.5px solid black;vertical-align: middle;font-size:14px;">
+                                                <span class="text-nowrap" t-esc="'{:,.2f}'.format(line.discount)"/>
+                                        </td>                               
+                                        <td name="td_subtotal"
+                                            style="border: 1.5px solid black;vertical-align: middle;font-size:14px;">
+                                            <div class="oe_inline text-nowrap">
+                                                <span t-esc="line.currency_id.symbol"/>
+                                                <span t-esc="'{:,.2f}'.format(line.price_subtotal)"/>
+                                            </div>
+                                        </td> 
+                                    </tr>
+                                </t>
+                               
+                            </tbody>
+                            <!-- <tr style="height: 25px;">
+                                <td  style="border: 1px solid black;text-align : right;">
+                                   
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                    
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                    
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                   
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                    
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                    <span t-esc="'{:,.2f}'.format(sum(line.product_uom_qty for line in doc.order_line))"/>
+                                    
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                    <span t-esc="'{:,.2f}'.format(sum(line.product_uom_qty for line in doc.order_line))"/>
+                                    
+                                </td>
+                                <td  style="border: 1px solid black;text-align : center;">
+                                   <strong>المجموع</strong>
+                                </td>
+                                <td  style="border: 1px solid black;text-align : right;">
+                                    
+                                </td>
+                            </tr> -->
+                        </table>
+                        <br/>
+                        <table width="60%" style="float:right;">
+                            <thead style="font-family:Calibri;">
+                                <tr>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;" width="30%">
+                                        <span>Subtotal</span>
+                                    </th>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;line_hight:25px;"  width="70%">
+                                        <div class="oe_inline">
+                                            <span t-field="doc.currency_id.symbol"/>
+                                            <span t-esc="'{:,.2f}'.format(doc.amount_untaxed)"/> 
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;" width="30%">
+                                        <span style="dir:ltr" dir="ltr">Universal Discount</span>
+                                    </th>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;line_hight:25px;" width="70%">
+                                        <div class="oe_inline">
+                                            <span t-field="doc.currency_id.symbol"/>
+                                            <span t-esc="'{:,.2f}'.format(doc.ks_amount_discount)"/> 
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;" width="30%">
+                                        <span style="dir:ltr" dir="ltr">Special Discount</span>
+                                    </th>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;line_hight:25px;" width="70%">
+                                        <div class="oe_inline">
+                                            <span t-field="doc.currency_id.symbol"/>
+                                            <span t-esc="'{:,.2f}'.format(doc.special_discount)"/> 
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;" width="30%">
+                                        <span>VAT %</span> 
+                                    </th>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;line_hight:25px;"  width="70%">
+                                        <div class="oe_inline">
+                                            <span t-field="doc.currency_id.symbol"/>
+                                            <span t-esc="'{:,.2f}'.format(doc.amount_tax)"/> 
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;" width="30%">
+                                        <span style="dir:ltr" dir="ltr">TOTAL</span>
+                                    </th>
+                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;line_hight:25px;" width="70%">
+                                        <div class="oe_inline">
+                                            <span t-field="doc.currency_id.symbol"/>
+                                            <span t-esc="'{:,.2f}'.format(doc.amount_total)"/> 
+                                        </div>
+                                    </th>
+                                </tr>
+<!--                                <tr>-->
+<!--                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;" width="30%">-->
+<!--                                        <span style="dir:ltr" dir="ltr">Margin</span>-->
+<!--                                    </th>-->
+<!--                                    <th style="border: 2px solid black;text-align : center;vertical-align: middle;line_hight:25px;" width="70%">-->
+<!--                                        <div class="oe_inline">-->
+<!--                                            <span t-field="doc.currency_id.symbol"/>-->
+<!--                                            <span t-esc="'{:,.2f}'.format(doc.margin)"/> -->
+<!--                                        </div>-->
+<!--                                    </th>-->
+<!--                                </tr>-->
+                            </thead>
+                        </table>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

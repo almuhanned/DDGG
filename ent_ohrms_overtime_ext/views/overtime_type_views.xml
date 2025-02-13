@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_overtime_type_form_view_inherit" model="ir.ui.view">
+        <field name="name">overtime.type.form.view.inherit</field>
+        <field name="model">overtime.type</field>
+        <field name="inherit_id" ref="ent_ohrms_overtime.hr_overtime_type_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='duration_type']" position="after">
+                <field name="payslip_input_type_id"/>
+                <field name="hour_limited"/>
+            </xpath>
+
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="rate"/>
+            </xpath>
+
+            <xpath expr="//page[@name='cash_rules']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_overtime_request_form_view_inherit" model="ir.ui.view">
+        <field name="name">overtime.request.form.view.inherit</field>
+        <field name="model">hr.overtime</field>
+        <field name="inherit_id" ref="ent_ohrms_overtime.hr_overtime_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group//field[@name='overtime_type_id']" position="replace">
+                <field name='overtime_type_id' groups="hr.group_hr_user" attrs="{'readonly': [('state', 'not in', ['f_git','draft'])], 'required': [('state', 'in', ['draft', 'f_approve'])]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='manager_id']" position="after">
+                <field name="hr_responsible_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

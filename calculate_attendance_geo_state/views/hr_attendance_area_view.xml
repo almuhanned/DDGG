@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_attendance_area_form" model="ir.ui.view">
+        <field name="name">view.hr.attendance.area.form</field>
+        <field name="model">hr.attendance.area</field>
+        <field name="arch" type="xml">
+            <form string="Geofence Area">
+                <sheet>
+                     <div class="oe_title">
+                        <label class="oe_edit_only" for="shape_name" string="Shape Name"/>
+                        <h1><field name="shape_name" placeholder="Shape Name"/></h1>
+                        <div name="options" groups="hr_attendance.group_hr_attendance_user">
+                            <div>
+                                <field name="attendance_ok"/>
+                                <label for="attendance_ok"/>
+                            </div>
+                        </div>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="current_user" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="shape_type" invisible="1"/>
+                            <field name="department_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                            <field name="employee_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                            <field name="shape_area" attrs="{'invisible':[('shape_type', '=', 'circle')]}"/>
+                            <field name="poly_lat" invisible="1"/>
+                            <field name="poly_lng" invisible="1"/>
+                            <field name="NE_latitude" invisible="1"/>
+                            <field name="NE_longitude" invisible="1"/>
+                            <field name="SW_latitude" invisible="1"/>
+                            <field name="SW_longitude" invisible="1"/>
+                            <field name="center_latitude" invisible="1"/>
+                            <field name="center_longitude" invisible="1"/>
+                            <field name="shape_radius" attrs="{'invisible':[('shape_type', '!=', 'circle')]}"/>
+                            <field name="notify_user"/>
+                            <field name="type_notification" attrs="{'invisible':[('notify_user', '!=', True)]}"/>
+                        </group>
+                    </group>
+                    <field name="shape_description" placeholder="Description"/>
+                    <separator/>
+                    <field name="shape_paths" widget="map_drawing_shape"/>
+                    <!-- <field name="shape_paths" widget="map_drawing_shape"/> -->
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_hr_attendance_area_tree" model="ir.ui.view">
+        <field name="name">view.hr.attendance.area.tree</field>
+        <field name="model">hr.attendance.area</field>
+        <field name="arch" type="xml">
+            <tree string="Geofence Areas">
+                <field name="shape_name"/>
+                <field name="shape_type"/>
+                <field name="shape_area"/>
+                <field name="shape_radius"/>
+                <field name="shape_description"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_hr_attendance_area_kanban">
+        <field name="name">view.hr.attendance.area.kanban</field>
+        <field name="model">hr.attendance.area</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban">
+                <field name="shape_name"/>
+                <field name="shape_type"/>
+                <field name="shape_area"/>
+                <field name="shape_radius"/>
+                <field name="shape_description"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_bottom">
+                                <field name="shape_name"/>
+                                <field name="shape_description"/>
+                                <ul>
+                                    <li attrs="{'invisible': [('shape_type', 'not in', ['rectangle', 'polygon'])]}">
+                                        Area: <field name="shape_area"/>
+                                    </li>
+                                    <li attrs="{'invisible': [('shape_type', '!=', 'circle')]}">
+                                        Radius: <field name="shape_radius"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="view_hr_attendance_area_map" model="ir.ui.view">
+        <field name="name">view.hr.attendance.area.map</field>
+        <field name="model">hr.attendance.area</field>
+        <field name="arch" type="xml">
+            <google_map library="drawing" string="Shape"> 
+                <field name="shape_name"/>
+                <field name="shape_description"/>
+                <field name="shape_type"/>
+                <field name="shape_radius"/>
+                <field name="shape_area"/>
+                <field name="shape_paths"/>
+                <templates>
+                    <t t-name="kanban-box">                    
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="shape_name"/>
+                                </strong>
+                                <div>
+                                    <field name="shape_description"/>
+                                </div>
+                                <div ><!-- -->
+                                    Area: <field name="shape_area" attrs="{'invisible': [('shape_type', 'not in', ['rectangle', 'polygon'])]}"/>
+                                </div>
+                                <div ><!---->
+                                    Radius: <field name="shape_radius" attrs="{'invisible': [('shape_type', '!=', 'circle')]}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </google_map>
+        </field>
+    </record>
+    <record id="action_hr_attendance_area" model="ir.actions.act_window">
+        <field name="name">Geofence Attendance Area</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.attendance.area</field>
+        <field name="view_mode">kanban,tree,google_map,form</field>
+    </record>
+
+<!--    <menuitem id="menu_hr_attendance_area" name="Geofence Attendance Area" action="action_hr_attendance_area" parent="hr_attendance.menu_hr_attendance_manage_attendances" groups="hr_attendance.group_hr_attendance_user" sequence="30"/>-->
+    <menuitem id="menu_hr_attendance_area1" name="Geofence Attendance Area" action="calculate_attendance_geo_state.action_hr_attendance_area" parent="hr.menu_human_resources_configuration" groups="hr_attendance.group_hr_attendance_manager" sequence="4"/>
+
+</odoo>

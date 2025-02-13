@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- ZID Integration Form -->
+	<record id="zid_integration_view_form" model="ir.ui.view">
+		<field name="name">zid.integration.view.form</field>
+		<field name="model">zid.integration</field>
+		<field name="arch" type="xml">
+			<form tring="Zid Integration">
+				<header>
+					<button string="TEST CONNECTION" type="object" name="action_test_connection"
+						class="oe_link" />
+					<button string="SYNC PRODUCT CATEGORIES" type="object" name="action_sync_product_categories"
+						class="oe_highlight" />
+					<button string="SYNC PRODUCTS" type="object" name="action_sync_products"
+						class="oe_highlight" />
+					<button string="SYNC INVENTORY" type="object" name="action_sync_inventory"
+						class="oe_highlight" />
+					<button string="SYNC IMAGES" type="object" name="action_sync_product_images"
+						class="oe_highlight" />
+					<button string="SYNC PAYMENT METHODS" type="object" name="action_sync_payment_methods"
+						class="oe_highlight" />
+
+				</header>
+				
+				<sheet>
+					<group string="Integration Details">
+						<field name="name" />
+						<field name="base_url" />
+						<field name="zid_store_id" />
+						<field name="authorization" class="o_text_overflow" />
+						<field name="refresh_token" class="o_text_overflow" />
+						<field name="access_token" class="o_text_overflow" />
+						<field name="last_order_sync" />
+						<field name="last_product_sync" />
+						<field name="stock_location_id" required="1" />
+						<field name="pricelist_id" required="1"/>
+						<field name="last_product_category_sync" />
+						<field name="product_export_limit" />
+						<field name="product_export_offset" />
+					</group>
+					<group string="Order Sync Details">
+						<field name="default_sale_tax_id" required="1" />
+						<field name="default_customer_id" required="1" />
+						<field name="coupon_product_id" required="1" />
+						<field name="delivery_product_id" required="1" />
+						<field name="zid_cod_product_id" required="1" />
+						<field name="sales_team_id" required="1" />
+					</group>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers" />
+					<field name="message_ids" widget="mail_thread" />
+				</div>
+			</form>
+		</field>
+	</record>
+
+	<!-- ZID Integration Tree -->
+	<record id="zid_integration_view_tree" model="ir.ui.view">
+		<field name="name">zid.integration.view.tree</field>
+		<field name="model">zid.integration</field>
+		<field name="arch" type="xml">
+			<tree string="Zid Integration">
+				<field name="name" />
+				<field name="zid_store_id" />
+				<field name="base_url" />
+			</tree>
+		</field>
+	</record>
+
+	<!-- ZID Integration Action -->
+	<record id="zid_integration_action" model="ir.actions.act_window">
+		<field name="name">Zid integration</field>
+		<field name="res_model">zid.integration</field>
+		<field name="view_mode">tree,form</field>
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+		<field name="help" type="html">
+			<p>Create a new zid integration to sync products, sales, and stock.</p>
+		</field>
+	</record>
+
+	<menuitem name="Zid Integration"
+		id="menu_zid_root"
+		sequence="20"
+		web_icon="zid_connector,static/description/icon.png"
+		groups="zid_connector.group_zid_integration_user" />
+
+	<menuitem name="Integrations"
+		id="menu_zid_integration"
+		parent="menu_zid_root"
+		action="zid_integration_action" />
+
+</odoo>

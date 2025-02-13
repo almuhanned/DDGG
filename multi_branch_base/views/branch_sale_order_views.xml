@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        	<field name="name">sale.order.form.inherit</field>
+        	<field name="model">sale.order</field>
+        	<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="//page[@name='other_information']//field[@name='company_id']" position="after">
+					<field name="branch_id" options="{'no_create': True}" domain="[('company_id', '=', company_id), ('id', 'in', allowed_branch_ids)]" required="1"/>
+					<field name="allowed_branch_ids" invisible="1"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="replace">
+					<field name="partner_id" widget="res_partner_many2one"  context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options="{'no_create': True,&quot;always_reload&quot;: True}"/>
+				</xpath>
+				<xpath expr="//page/field[@name='order_line']/tree/field[@name='product_id']" position="replace">
+					<field name="product_id" options="{'no_create': True}" attrs="{  'readonly': [('product_updatable', '=', False)],   'required': [('display_type', '=', False)],  }" force_save="1" context="{    'partner_id': parent.partner_id,   'quantity': product_uom_qty,    'pricelist': parent.pricelist_id,                                             'uom':product_uom,     'company_id': parent.company_id, 'default_lst_price': price_unit, 'default_description_sale': name  }" domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]" widget="product_configurator"/>
+
+				</xpath>
+				<xpath expr="//page[@name='other_information']//field[@name='warehouse_id']" position="replace">
+					<field name="warehouse_id" options="{'no_create': True}"
+						   domain="['|', ('branch_id', '=', branch_id), ('branch_id', '=', False)]"
+						   groups="stock.group_stock_multi_warehouses"
+						   force_save="1"/>
+				</xpath>
+			</field>
+        </record>
+
+		<record id="view_sale_order_search_view_inherit" model="ir.ui.view">
+			<field name="name">sale.order.search.view.inherit</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+			<field name="arch" type="xml">
+				<xpath expr="//search/group" position="inside">
+					<filter string="Branch" name="Branch" context="{'group_by':'branch_id'}"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="sale_order_view_search_inherit_quotation_inherit" model="ir.ui.view">
+			<field name="name">sale.quotation.search.view.inherit</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+			<field name="arch" type="xml">
+				<xpath expr="//search/group" position="inside">
+					<filter string="Branch" name="Branch" context="{'group_by':'branch_id'}"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record id="view_order_tree_inherit" model="ir.ui.view">
+            <field name="name">view.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="branch_id" optional="show"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

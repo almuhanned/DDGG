@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="leave_calendar_days_inherit_leave_type_form" model="ir.ui.view">
+            <field name="name">leave.calendar.days.inherit.leave.type.form</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='requires_allocation']" position="after">
+                    <field name="calendar_days" attrs="{'invisible': [('requires_allocation', '!=', 'yes')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

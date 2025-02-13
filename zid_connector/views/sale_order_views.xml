@@ -1,0 +1,47 @@
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="zid_connector_view_order_form">
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='payment_term_id']" position="after">
+					<field name="zid_integration_id" string="Zid Integration"
+						groups="base.group_no_one" readonly="1" />
+					<field name="zid_store_id" string="Order Ref In Zid" readonly="1" />
+					<field name="zid_payment_method_id" string="Payment Method" readonly="1" />
+				</xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_quotation_tree">
+			<field name="inherit_id" ref="sale.view_quotation_tree" />
+			<field name="model">sale.order</field>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='amount_untaxed']" position="before">
+					<field name="zid_integration_id" string="Zid Integration"
+						groups="base.group_no_one" readonly="1" />
+					<field name="zid_store_id" string="Order Ref In Zid" readonly="1" />
+					<field name="zid_payment_method_id" string="Payment Method" readonly="1" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="zid_store_sale_order_view_search_inherit_quotation" model="ir.ui.view">
+			<field name="name">sale.order.search.inherit.quotation</field>
+			<field name="model">sale.order</field>
+			<field name="mode">extension</field>
+			<field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation" />
+			<field name="arch" type="xml">
+				<field name="partner_id" position="after">
+					<field name="zid_store_id" string="Order Ref In Zid" readonly="1" />
+				</field>
+				<xpath expr="//filter[@name='my_quotation']" position="replace">
+					<filter string="Zid Store" name="zid_orders"
+						domain="[('zid_integration_id', '!=', False)]" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</odoo>

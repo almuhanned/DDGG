@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_attendance_view_form" model="ir.ui.view">
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group" position="after">
+                <group name="locations" col="2">
+
+                   <group>
+                    <span class="oe_inline">
+                        <strong>Check-in Location</strong>
+                        <br></br>
+                        Latitude: <field name="check_in_lat" nolabel="1"/><br/>
+                        Longitude: <field name="check_in_lng" nolabel="1"/><br/>
+                        Geofence State: <field name="check_in_geo_state" nolabel="1"/><br/>
+                    </span>
+                   </group>
+
+
+                   <group>
+                    <span class="oe_inline">
+                        <strong>Check-out Location</strong>
+                        <br></br>
+                        Latitude: <field name="check_out_lat" nolabel="1"/><br/>
+                        Longitude: <field name="check_out_lng" nolabel="1"/><br/>
+                        Geofence State: <field name="check_out_geo_state" nolabel="1"/>
+                    </span>
+                   </group>
+                </group>
+                <group name="geofence_area">
+                    <field name="geofence_id" readonly="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <!-- <field name="id"/> -->
+                <field name="emp_id"/>
+                <field name="email"/>
+                <field name="company"/>
+                <field name="active"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="view_attendance_tree_inh" model="ir.ui.view">
+        <field name="name">Attendances</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='employee_id']" position="after">
+                <!-- <field name="id"/> -->
+                <field name="emp_id"/>
+                <field name="email"/>
+                <field name="company"/>
+                <field name="active"/>
+        </xpath>
+        </field>
+    </record>
+
+     <record id="hr_attendance_view_filter_inherit" model="ir.ui.view">
+        <field name="name">hr_attendance_view_filter</field>
+         <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="model">hr.attendance</field>
+        <field name="arch" type="xml">
+            <xpath expr="//search/field[@name='employee_id']" position="after">
+                <field name="geofence_id"/>
+            </xpath>
+            <filter name="employee" position="after">
+                  <filter string="geofence area" name="geofence area" context="{'group_by': 'geofence_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

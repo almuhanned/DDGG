@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_order_sequence_line_form" model="ir.ui.view">
+            <field name="name">view_order_sequence_line_form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree" position="inside">
+                    <field name="sequence" string=".." invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

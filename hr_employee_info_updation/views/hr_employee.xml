@@ -1,0 +1,212 @@
+<odoo>
+<data>
+    <record id="employee_contract_attachment_group" model="res.groups">
+        <field name="name">Employee Contract Attachment</field>
+    </record>
+
+        <record id="view_employee_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+<!--placeholder="Arabic Name....."-->
+                <xpath expr="//page[@name='personal_information']" position="after">
+                    <page string="Government Information">
+                        <group>
+                            <group string="First Related Person">
+                                <field name="first_related_person_name" />
+                                <field name="first_related_person_relation" />
+                                <field name="first_related_person_phone" />
+                            </group>
+                            <group string="Second Related Person">
+                                <field name="second_related_person_name" />
+                                <field name="second_related_person_relation" />
+                                <field name="second_related_person_phone" />
+                            </group>
+                            <group string="Employee Info">
+                                <field name="sub_agency_id" />
+                                <field name="employee_number" invisible="1"/>
+                                <field name="personal_identifier" invisible="1"/>
+                                <field name="personal_identifier_place" invisible="1"/>
+                                <field name="personal_identifier_date" invisible="1"/>
+                                <field name="passport_number" invisible="1"/>
+                                <field name="national_id" invisible="1"/>
+                                <field name="iqama_no" invisible="1"/>
+                            </group>
+                            <group string="Personal Name AR">
+                                <field name="first_name" placeholder="Arabic First Name....."/>
+                                <field name="second_name" placeholder="Arabic second Name....."/>
+                                <field name="Third_name" placeholder="Arabic Third Name....." />
+                                <field name="last_name" placeholder="Arabic last Name....."/>
+                            </group>
+                            <group string="Personal Name EN">
+                                <field name="first_name_e" placeholder="English First Name....."/>
+                                <field name="second_name_e" placeholder="English second Name....."/>
+                                <field name="Third_name_e" placeholder="English Third Name....." />
+                                <field name="last_name_e" placeholder="English last Name....."/>
+                                <field name="religion_id" />
+                                <field name="blood_id" />
+                                <field name="health_id" />
+                                <field name="employee_status_code" />
+                            </group>
+                            <group string="Termination Info">
+                                <field name="termination_reason_code" />
+                                <field name="termination_date" />
+                                <field name="last_update_date" />
+                            </group>
+                            <group string="Job Info">
+                                <field name="job_number" />
+                                <field name="job_class_code" />
+                                <field name="job_class_description" />
+                                <field name="job_cat_chain" />
+                                <field name="job_name_code" />
+                                <field name="job_name_description" />
+                                <field name="employee_type_code" />
+                                <field name="employee_type_description" />
+                                <field name="rank_code" />
+                                <field name="step_id" />
+                                <field name="step_date" />
+                                <field name="first_grade_date" />
+                                <field name="actual_job_name_code" />
+                                <field name="actual_job_name_description" />
+                                <field name="job_organization_name" />
+                                <field name="actual_organization_id" />
+                                <field name="actual_organization_name" />
+                                <field name="next_promotion_date" />
+                                <field name="government_hire_date" />
+                                <field name="location_code" />
+                                <field name="ministry_hire_date" />
+                                <field name="remaining_business_balance" />
+                            </group>
+                        </group>
+                            <field name="job_history_ids">
+                                <tree editable="bottom">
+                                    <field name="description"/>
+                                    <field name="hr_job_id"/>
+                                    <button name="action_done" string="Approve" type="object"/>
+                                </tree>
+
+                            </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='children']/.." position="after">
+                    <field name="employee_child_ids">
+                        <tree editable="bottom" string="childs">
+                            <field name="name" />
+                            <field name="gender" />
+                            <field name="child_id" />
+                            <field name="date_of_birth" />
+                            <field name="relation_ship" />
+                            <field name="license_number" />
+                            <field name="insurance_category" />
+                            <field name="insurance_start_date" />
+                            <field name="insurance_end_date" />
+                        </tree>
+                    </field>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="EOS Payment Items">
+                        <field name="employee_eos_amount_ids">
+                            <tree editable="bottom" string="EOS Payment Items">
+                                <field name="amount" />
+                                <field name="date_of_payment" />
+                                <field name="name" />
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page string="Contract Attachment" groups="hr_employee_info_updation.employee_contract_attachment_group">
+                        <field name="contract_attachment_ids">
+                            <tree editable="bottom" string="Contract Attachment">
+                                <field name="contract_attachment" />
+                                <field name="attachment_date" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='certificate']" position="replace">
+                    <field name="certificate_id" />
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="hr_job_form_view" model="ir.ui.view" >
+            <field name="name">hr.job.history</field>
+            <field name="model">hr.job.history</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="job_number"/>
+                                <field name="job_class_code"/>
+                                <field name="job_class_description"/>
+                                <field name="job_cat_chain"/>
+                                <field name="job_name_code"/>
+                                <field name="job_name_description"/>
+                                <field name="employee_type_code"/>
+                                <field name="employee_type_description"/>
+                                <field name="rank_code"/>
+                                <field name="step_id"/>
+                                <field name="step_date"/>
+                                <field name="first_grade_date"/>
+                                <field name="actual_job_name_code"/>
+                                <field name="wage"/>
+                            </group>
+                            <group>
+                                <field name="actual_job_name_description"/>
+                                <field name="job_organization_name"/>
+                                <field name="actual_organization_id"/>
+                                <field name="actual_organization_name"/>
+                                <field name="next_promotion_date"/>
+                                <field name="government_hire_date"/>
+                                <field name="location_code"/>
+                                <field name="ministry_hire_date"/>
+                                <field name="remaining_business_balance"/>
+                                <field name="transaction_code"/>
+                                <field name="transaction_description"/>
+                                <field name="transaction_start_date"/>
+                                <field name="transaction_end_date"/>
+                                <field name="last_update_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_job_history_tree" model="ir.ui.view">
+            <field name="name">hr.job.history</field>
+            <field name="model">hr.job.history</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="job_number"/>
+                    <field name="job_class_code"/>
+                    <field name="job_class_description"/>
+                    <field name="job_cat_chain"/>
+                    <field name="job_name_code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="job_template_action" model="ir.actions.act_window">
+            <field name="name">Jobs Information</field>
+            <field name="res_model">hr.job.history</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="request_letter_menu"
+              name="Jobs Information"
+              action="job_template_action"
+              parent="hr.menu_hr_root"
+        />
+
+</data>
+</odoo>
