@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_template_discount_approval_request" model="mail.template">
+        <field name="name">Discount Approval Request</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="subject">Discount Approval Required: ${object.name}</field>
+        <field name="email_from">${(object.user_id.email or 'noreply@yourcompany.com')}</field>
+        <field name="email_to">${object.user_id.approval_manager.user_id.email}</field>
+        <field name="body_html"><![CDATA[
+            <p>Hello,</p>
+            <p>A discount approval request has been made for the sale order: <strong>${object.name}</strong></p>
+            <p>Requested Discount: <strong>${object.approval_history}</strong></p>
+            <p>Please review and approve or reject the request.</p>
+            <p>Thank you.</p>
+        ]]></field>
+    </record>
+</odoo>
